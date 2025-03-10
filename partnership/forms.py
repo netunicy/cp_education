@@ -81,12 +81,18 @@ class UserProfileForm(forms.ModelForm):
         help_text="Ανεβάστε το πτυχίο σας σε μορφή PDF."
     )
 
+    accept_terms = forms.BooleanField(
+        label="Αποδέχομαι τους Όρους και τις Προϋποθέσεις",
+        widget=forms.CheckboxInput(attrs={'class': 'form-check-input'}),
+        error_messages={'required': "Πρέπει να αποδεχτείτε τους όρους για να συνεχίσετε."},
+    )
+
     class Meta:
         model = PartnerProfile
         fields = [
             'first_name', 'last_name', 'country', 'region', 'address',
             'postal_code', 'email', 'phone', 'degree_title', 'iban', 'bank_name',
-            'id_card', 'diploma'
+            'id_card', 'diploma', 'accept_terms'
         ]
 
     def clean_diploma(self):

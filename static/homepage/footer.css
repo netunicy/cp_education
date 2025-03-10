@@ -7,7 +7,10 @@ body {
     min-height: 100vh;
      /* Ensures the body covers the full viewport height */
 }
-
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
 footer {
     position: absolute;
     background-color: #4d4d4d;

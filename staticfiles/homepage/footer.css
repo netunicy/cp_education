@@ -7,7 +7,6 @@ body {
     min-height: 100vh;
      /* Ensures the body covers the full viewport height */
 }
-
 footer {
     position: absolute;
     background-color: #4d4d4d;

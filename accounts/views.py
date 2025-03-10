@@ -134,14 +134,14 @@ def activate_account(request, activation_key,user_id):
         #content={
             #'mylogo':mylogo_home,
         #}
-        return render(request,('homepage.html'))   
+        return redirect('homepage:homepage') 
 
     except UserActivation.DoesNotExist:
         messages.error(request,'Αποτυχία επιβεβαίωσης ηλεκτρονικού ταχυδρομίου')
         #content={
             #'mylogo':mylogo_home,
         #}
-        return render(request, 'home.html')
+        return redirect('homepage:homepage')
 
 @requires_csrf_token
 @csrf_protect

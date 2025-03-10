@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'homepage/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'contact_us/contact_us_form.css' %}">
+    <title>Contact Us</title>
+</head>
+<body>
+
+    {% for x in logo %}
+        <image class='logo' src="{{x.mylogo}}" alt="Λογότυπο της εταιρείας C.P Education for All" width="450" height="150" id='img'>
+    {% endfor %}
+    
+    <a class="button3" href="{% url 'homepage:homepage' %}" ></i></i>Homepage</a>
+    <div class="container">
+        <form method="post" id="contact" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}  <!-- Αυτό κάνει render όλα τα πεδία της φόρμας, συμπεριλαμβανομένου του CAPTCHA -->
+            <fieldset>
+                <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+            </fieldset>
+            <p class="copyright">
+                Designed by CP Software Creation
+            </p>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'homepage/success_payment.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'homepage/favicon.ico' %}" >
+    <title>Success Payment</title>
+</head>
+<body>
+    <h1>Η Πληρωμή ολοκληρώθηκε με επιτυχία.</h1>
+    {% for x in logo %}
+        <img class="image" src="{{x.Success_logo}}" >
+    {% endfor %}
+    <h2>Σας Ευχαριστούμε!</h2>
+    <a href="{% url 'homepage:my_purchases' %}" class="button">Παρακολούθηση Μαθήματος</a>
+</body>
+</html>
+{% endblock content %}
+

@@ -1,0 +1,352 @@
+* {
+    font-family: 'Times New Roman', Times, serif;
+    
+
+}
+body, html {
+    width: 100%;
+    height: auto;
+}
+
+h1 {
+    text-align: center;
+    font-size: 35px;
+    border-radius: 10px;
+    background-color: lightblue;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.button {
+    background-color: #f7cf06;
+    color: rgb(0, 0, 0);
+    padding: 8px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-family: "Times New Roman", Times, serif;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    position: absolute;
+    right: 12rem;
+    top: 7rem;
+    border: 2px solid #000000;
+    font-weight: bolder;
+}
+
+#author {
+    font-style: normal;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 22px;
+    color: blue;
+    font-weight: bold;
+    margin-top: 35px;
+    margin-left: 25px;
+}
+
+#hr {
+    margin-top: 10;
+    margin-right: 0px;
+}
+
+.button:hover {
+    background-color: #f1bf5b;
+}
+
+#content {
+    font-size: 25px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 50px;
+}
+
+.button1 {
+    background-color: #20ADD3;
+    color: rgb(0, 0, 0);
+    padding: 8px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-family: "Times New Roman", Times, serif;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    position: absolute;
+    right: 2rem;
+    top: 7rem;
+    border: 2px solid #000000;
+    font-weight: bolder;
+}
+
+.button1:hover {
+    background-color: #BE96EB;
+}
+
+.media {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border-radius: 10px;
+    height: auto;
+    border: 2px solid #000000;
+    margin-top: 5rem;
+}
+
+span {
+    color: blue;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#timeWatched {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#second {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#list {
+    font-size: 20px;
+    bottom: 1rem;
+    margin-top: 2rem;
+    margin-left: 22%;
+}
+
+.border {
+    border: 1px solid rgb(141, 141, 142);
+    border-radius: 8px;
+    display: inline-block;
+    text-align: left;
+    padding: 10px 50px 10px 10px;
+    background-color: lightblue;
+    position: relative;
+    
+}
+
+.icon {
+    position: absolute;
+    right: 10px; /* Align icon 10px from the left of the .border element */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Center vertically */
+}
+
+span {
+    font-weight: bolder;
+    color: blue;
+}
+
+#li {
+    color: black;
+}
+
+#countdown {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 25px;
+    color: blue;
+    
+}
+
+#views {
+    font-size:20px;
+    margin-left: 25%;
+    padding: 10px 16px;
+    background-color: rgb(203, 203, 203);
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.read-more-btn {
+    font-size: 18px;
+    padding: 8px 12px;
+    background-color: rgb(248, 195, 116);
+    border-radius: 8px;
+    margin-left: 4%;
+    margin-bottom: 10rem;
+}
+
+.read-less-btn {
+    font-size: 18px;
+    display: none;
+    padding: 8px 12px;
+    background-color:rgb(248, 195, 116);
+    border-radius: 8px;
+    margin-bottom: 10rem;
+    margin-left: 4%;
+}
+
+
+.read-more-btn:hover {
+    background-color: rgb(235, 249, 108);
+
+}
+.read-less-btn:hover {
+    background-color: rgb(235, 249, 108);
+}
+ 
+@media only screen and (max-width: 768px) and (max-height: 1024px) and (orientation: portrait) {
+    body, html {
+        width: 100%;
+        height: auto;
+    }
+    h1 {
+        font-size: 20px;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        padding: 10px;
+        margin-top: 1rem;
+    }
+    .button {
+        font-size: 16px;
+        padding: 8px 8px;
+        right: 10rem;
+        top: 5rem;
+    }
+    .button1 {
+        font-size: 16px;
+        padding: 8px 8px;
+        right: 2rem;
+        top: 5rem;
+    }
+    .media {
+        width: 85%;
+        height: auto;
+        margin-top: 6rem;
+        margin-left: auto;
+        margin-right: auto;
+        transform: translate(-50% -50%);
+        display: block;
+    }
+    #list {
+        font-size: 16px;
+        margin-left: 1rem;
+        margin-top: 1rem;
+        margin-right: 2rem;
+    }
+    #views {
+        font-size:17px;
+        margin-left: 2rem;
+        padding: 6px 12px;
+        margin-top: 1rem;
+    }
+    .read-more-btn {
+        font-size: 16px;
+        padding: 6px 12px;
+    }
+    
+    .read-less-btn {
+        font-size: 16px;
+        padding: 6px 12px;
+    }
+    .border {
+        box-sizing: border-box; /* Include padding and border in the element's total width */
+        font-size: 14px; /* Adjust font size if necessary */
+    }
+    #li {
+        font-size: 18px;
+        text-decoration: none;
+    }
+    
+}
+
+@media only screen and (orientation: landscape) and (max-width: 1000px) {
+    h1 {
+        font-size: 25px;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 10px;
+    }
+    
+    .button {
+        font-size: 16px;
+        padding: 8px 8px;
+        right: 2rem;
+        top: 5rem;
+    }
+    .button1 {
+        font-size: 16px;
+        padding: 8px 8px;
+        right:6rem;
+        top: 5rem;
+    }
+    .media {
+        width: 60%;
+        height: auto;
+        margin-top: 5rem;
+    }
+    #list {
+        font-size: 18px;
+        margin-left: 10rem;
+        margin-top: auto;
+    }
+    #views {
+        font-size:18px;
+        margin-left: 12rem;
+    }
+    .read-more-btn {
+        font-size: 18px;
+        padding: 6px 12px;
+    }
+    
+    .read-less-btn {
+        font-size: 18px;
+        padding: 6px 12px;
+    }
+    
+} 
+@media only screen and (min-width: 1920px) {
+    h1 {
+        font-size: 40px;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 10px;
+    }
+    
+    .button {
+        font-size: 25px;
+        padding: 10px 12px;
+        right: 2rem;
+        top: 10rem;
+    }
+    .button1 {
+        font-size: 25px;
+        padding: 10px 12px;
+        right:8rem;
+        top: 10rem;
+    }
+    .media {
+        width: 50%;
+        height: auto;
+        margin-top: 5rem;
+    }
+    #list {
+        font-size: 30px;
+        margin-left: 28rem;
+        margin-top: auto;
+    }
+    #views {
+        font-size:30px;
+        margin-left: 30rem;
+    }
+    .read-more-btn {
+        font-size: 30px;
+        padding: 10px 12px;
+    }
+    
+    .read-less-btn {
+        font-size: 30px;
+        padding: 10px 12px;
+    }
+
+}
+

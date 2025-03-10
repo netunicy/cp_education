@@ -1,0 +1,29 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="el">
+    
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" href="{% static 'homepage/error.css' %}">
+        <link rel="shortcut icon" type="image/png" href="{% static 'homepage/favicon.ico' %}" >
+        <title>Checkout</title>
+    </head>
+    
+<body>
+<div id="msg">
+    {% if messages %}
+      {% for message in messages %}
+        <p><a {% if message.tags %} class="{{ message.tags }}"{% endif %}>
+          {% if message.level == DEFAULT_MESSAGE_LEVELS.success %}{% endif %}{{ message }}
+        </p>
+      {% endfor %}
+    {% endif %}
+  </div>
+  <a href="{% url 'homepage:homepage' %}" class="button">Αρχική Σελίδα</a>
+  <a onClick="javascript:history.go(-1);" class="button1">Πίσω</a>
+</body>
+
+</html>
+{% endblock content %}

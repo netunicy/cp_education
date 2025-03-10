@@ -1,0 +1,66 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'homepage/book_content.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'homepage/favicon.ico' %}" >
+    <title>Περιεχόμενα</title>
+</head>
+<body>
+    <!--<script>
+        document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+    });
+    </script>!-->
+    {% for x in data %}
+        <h1>{{x.book_title}}</h1>
+        <form action="{% url 'homepage:lesson_details' x.ref_code_book %}" method="post">
+            {% csrf_token %}
+            <select name="your_name" class='select_value'title="Select an option">
+                <option selected disabled hidden>-Επιλογή Κεφαλαίου-</option>
+                <option class="droplist">Παρακολούθηση όλων των Κεφαλαίων</option>
+                {% for j in list %}
+                    <option class="droplist" type="text" value="{{j}}">{{j}}</option>
+                {% endfor %}
+            </select>       
+            <button class='button_chapter' type="submit">Προβολή</button>
+            
+        </form>
+        <div class="text">
+            <a id="downbook" href="{{ x.book }}" target="_blank">Κατέβασε το αρχείο σε pdf</a>
+            <p id='content'>Περιεχόμενα</p>
+            <p class="text1">{{ x.content|safe }}</p><br>
+        </div>
+        
+        <a href="{% url 'homepage:homepage' %}" class="button">Αρχική Σελίδα</a>
+        <a href="#" id="topLink" class="top-link">Κορυφή Σελίδας</a>
+        <a href="#" id="backButton" class="button1">Πίσω</a>
+
+        <script>
+            document.getElementById('topLink').addEventListener('click', function(event) {
+                event.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                localStorage.setItem('topClicked', 'true');
+            });
+            document.getElementById('backButton').addEventListener('click', function(event) {
+                if (localStorage.getItem('topClicked') === 'true') {
+                    history.go(-1);
+                } else {
+                    history.go(-1);
+                }
+                localStorage.removeItem('topClicked');
+            });
+        </script>
+        
+    {% endfor %} 
+    
+</body>
+
+</html>
+{% endblock content %}

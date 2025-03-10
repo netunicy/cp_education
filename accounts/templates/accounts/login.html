@@ -1,0 +1,57 @@
+{% block content %} 
+{% load static %}
+<!DOCTYPE html>
+<html lang="el">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="{% static 'accounts/login.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'homepage/favicon.ico' %}" >
+    <title>Σύνδεση</title>
+  </head>
+  <body>
+    <h1>Σύνδεση</h1>
+    <a href="{% url 'homepage:homepage' %}" class="btn33">Αρχική Σελίδα</a>
+    
+  
+    <form method="POST" action="" autocomplete="off">
+      {% csrf_token %}
+      <div class="border-box">
+        <label for="uname" id="un">Username: </label><br/>
+        <input type="text" name="username" placeholder="Enter Username" id="uname"required="" autocomplete="off"><br/>
+        <label for="upass" id="ps">Password: </label><br/>
+        <input type="password" name="password" placeholder="Enter Password" id="upass"required="" autocomplete="new-password"><br/>
+      </div>
+      <input type="checkbox" id='viewcode' onclick="togglePasswordVisibility()">Εμφάνιση Κωδικού Ασφαλείας</input><br>
+      <script>
+        function togglePasswordVisibility() {
+          var x = document.getElementById("upass");
+          if (x.type === "password") {
+            x.type = "text";
+          } else {
+            x.type = "password";
+          }
+        }
+      </script>
+      
+      <button type="submit" value="Login"  id="submit">Login</button>
+    </form>
+    <p class='p1'>Αν <span style="color:red;">ΔΕΝ</span> έχετε κάνει εγγραφή, παρακαλώ πατήστε τον σύνδεσμο <a href="{% url 'accounts:user_register' %}"><span>Για Εγγραφή</span></a></p>
+    <p id='p2'><a href="{% url 'accounts:forgot_username' %}"> <span> Ξεχάσατε το Username; </span> </a></p>
+    <p id='p3'><a href="{% url 'accounts:reset_password' %}"> <span> Ξεχάσατε τον Κωδικό; </span> </a></p>
+    <div id="msg">
+      {% if messages %}
+        {% for message in messages %}
+          <p><a {% if message.tags %} class="{{ message.tags }}"{% endif %}>
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.error %}{% endif %}{{ message }}
+          </p>
+        {% endfor %}
+      {% endif %}
+    </div>
+      
+  </body>
+</html>
+{% endblock content %}
+
+

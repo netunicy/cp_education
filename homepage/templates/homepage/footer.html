@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="{% static 'homepage/footer.css' %}">
+</head>
+<body>
+    <footer>
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>Τι Προσφέρουμε</h3>
+                    <p>Προσφέρουμε διαδικτυακά μαθήματα σε μαθητές Δημοτικού και Γυμνασίου σε ενότητες που διδάσκονται στα σχολικά εγχειρίδια της Κύπρου και της Ελλάδας.
+                    </p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="{% url 'homepage:homepage' %}">Home</a></li>
+                        <li><a href="{% url 'contact_us:form' %}">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Επικοινωνία</h3>
+                    <ul>
+                        <li><a href="mailto:cpsoftwarecreation@outlook.com">Email: cpnetuni@outlook.com</a></li>
+                        <li><a href="tel:0035799899041">Phone Cy: 00357-99899041</a></li>
+                        <li><a href="tel:00447731869171">Phone UK: 0044-7731869171</a></li>
+                        <li>Διεύθυνση: Nicosia, Cyprus</li>
+                        <li>Διεύθυνση: London, United Kingdom</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=61572742991174" target="_blank">
+                    <i class="fa fa-facebook"></i> Facebook
+                </a>
+                <a href="https://www.instagram.com/cpnetuni/" target="_blank">
+                    <i class="fa fa-instagram"style="font-size:24px;color:red"></i> Instagram
+                </a>
+            </div>
+            <p>&copy; 2025 C.P Education For All. All rights reserved. <br> This site was created by C.P Software Creation.</p>
+        </div>
+    </footer>
+</body>

@@ -1,0 +1,178 @@
+/* Login form css */
+body {
+    margin: 0px;
+    padding: 0px;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    width: 100%;
+    background-color: white;
+}
+
+input[type=email] {
+    width: 30%;
+    padding: 7px 10px;
+    margin: 20px 0;
+    display: inline-block;
+    border: 2px solid rgb(0, 0, 0);
+    box-sizing: border-box;
+    font-size: 20px;
+    margin-right: 0px;
+    margin-top: 20px;
+}
+
+button {
+    background-color: #20ADD3;
+    width: 15%;
+    padding: 9px 5px;
+    cursor: pointer;
+    border-radius: 12px;
+    color: #000000;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 25px;
+    margin-left: 50px;
+    border: 2px solid #000000;
+}
+
+button:hover {
+    opacity: 0.8;
+    background-color: #BE96EB;
+}
+
+#un {
+    font-family: 'Times New Roman', Times, serif;
+    color: #000000;
+    font-size: 25px;
+}
+
+.border-box {
+    font-size: 30px;
+    margin-top: 50px;
+
+}
+
+
+#title {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    margin-top: 50px;
+    color: #000000;
+}
+
+h1 {
+    margin-top: 200px;
+}
+
+span {
+    color: red;
+}
+
+.button1 {
+    background-color: #20ADD3;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bolder;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px 50px 8px;
+    position: absolute;
+    left: 50px;
+    top: 50px;
+    border: 2px solid #000000;
+}
+
+.button1:hover {
+    background-color: #BE96EB;
+
+}
+
+.button2 {
+    background-color: #20ADD3;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bolder;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50px 8px 50px;
+    position: absolute;
+    left: 250px;
+    top: 50px;
+    border: 2px solid #000000;
+}
+
+.button2:hover {
+    background-color: #BE96EB;
+
+}
+
+@media only screen and (max-width: 500px) and (min-width: 280px) {
+    input[type=email] {
+        width: 60%;
+        font-size: 16px;
+    }
+    button {
+        width: 40%;
+    }
+    
+    .button1 {
+        left: 30px;
+        top: 25px;
+        padding: 10px 15px;
+    }
+    .button2 {
+        left:30px;
+        top: 80px;
+        padding: 10px 15px;
+    }
+    h1 {
+        margin-top: 170px;
+        font-size: 25px;
+    }
+    .border-box {
+        margin-top: 30px;
+    
+    }
+}
+
+@media only screen and (max-width: 1000px) and (min-width: 501px) {
+    input[type=email] {
+        width: 60%;
+        font-size: 16px;
+    }
+    button {
+        width: 40%;
+    }
+    
+    .button1 {
+        left: 30px;
+        top: 25px;
+        padding: 10px 15px;
+    }
+    .button2 {
+        left:30px;
+        top: 80px;
+        padding: 10px 15px;
+    }
+    h1 {
+        margin-top: 170px;
+    }
+    .border-box {
+        margin-top: 30px;
+    }
+    #title {
+        font-size: 17;
+    }
+
+}

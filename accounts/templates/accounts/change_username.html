@@ -1,0 +1,53 @@
+{% block content %} 
+{% load static %}
+<!DOCTYPE html>
+<html lang="el">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'accounts/change_username.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'homepage/favicon.ico' %}" >
+    <title>Αλλαγή Προσωπικών Στοιχείων</title>
+  </head>
+  <body>
+    <h1>Ενημέρωση Username ή Email</h1>
+    <a href="{% url 'homepage:homepage' %}" class="button2">Αρχική Σελίδα</a>
+    <form method="POST" action="" autocomplete="off">
+      {% csrf_token %}
+            
+        <label for="username" id="usr">New Username: </label></br>
+        <input type="text" name="username" placeholder="User name" autocomplete="off"><br/>
+        
+        <label for="email" id="email">New Email: </label></br>
+        <input type="email" name="email" placeholder="Email" autocomplete="off" ><br/>
+        
+        <label for="password" id="psw1" autocomplete="new-password">Current Password: <span id='star'>* Υποχρεωτικό πεδίο</span></label><br>
+        <input type="password" id="password" name="password" placeholder="Password" required='' autocomplete="new-password"><br>
+        <input type="checkbox" id='viewcode' onclick="togglePasswordVisibility()">Εμφάνιση Κωδικού Ασφαλείας</input><br>
+        
+        <button type="submit" id="submit">Αλλαγή Στοιχείων</button>
+    </form>
+    <script>
+      function togglePasswordVisibility() {
+        var x = document.getElementById("password");
+        if (x.type === "password") {
+          x.type = "text";
+        } else {
+          x.type = "password";
+        }
+      }
+    </script>
+    <div id="msg1">
+      {% if messages %}
+        {% for message in messages %}
+          <p><a {% if message.tags %} class="{{ message.tags }}"{% endif %}>
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.warning %}{% endif %}{{ message }}
+          </p>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </body>
+</html>
+{% endblock content %}
+

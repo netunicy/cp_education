@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="el">
+<html>
+<head>
+    <title>Σφάλμα εκτέλεσης πληρωμής</title>
+</head>
+<body>
+    <a href="{% url 'homepage:homepage' %}" class="button">Αρχική Σελίδα</a>
+    <h1>Η Πληρωμή δεν έχει ολοκληρωθεί</h1>
+    {% if error_message %}
+        <p>Σφάλμα εκτέλεσης πληρωμής: {{ error_message }}</p>
+    {% endif %}
+    
+</body>
+</html>

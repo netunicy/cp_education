@@ -1,0 +1,56 @@
+.msg {
+    font-size: 20px;
+    color:rgb(0, 30, 255);
+    text-align: center;
+    margin-top: 200px;
+}
+
+.button1 {
+    background-color: #20ADD3;
+    color: rgb(0, 0, 0);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-family: "Times New Roman", Times, serif;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    position: absolute;
+    right: 90px;
+    top: 50px;
+    border: 2px solid #000000;
+    font-weight: bolder;
+}
+
+.button1:hover {
+    background-color: #BE96EB;
+}
+
+@media only screen and (max-width: 500px) and (min-width:265px) {
+    .button1 {
+        padding: 8px 16px;
+        font-size: 16px;
+        right: 20px;
+        top: 50px;
+    }
+
+    .msg {
+        font-size: 16px;
+    }
+
+}
+
+@media only screen and (max-width: 1000px) and (min-width: 501px) {
+    .button1 {
+        padding: 8px 16px;
+        font-size: 16px;
+        right: 20px;
+        top: 50px;
+    }
+
+    .msg {
+        font-size: 18px;
+    }
+}

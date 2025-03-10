@@ -1,0 +1,173 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'homepage/display_video.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'homepage/favicon.ico' %}" >
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+    });
+    </script>
+    {% for x in data %}
+        <h1>{{x.part_title}} <span>{{x.part_video}}</span></h1>
+        <div id="video-container"></div>
+        <script>
+            const videoContainer = document.getElementById('video-container');
+            const video = document.createElement('video');
+            video.controls = true;
+            video.controlsList = 'nodownload';
+    
+            const source = document.createElement('source');
+            source.src = "{{data_url}}";
+            source.type = 'video/mp4';
+    
+            video.appendChild(source);
+            video.classList.add('media');
+    
+            videoContainer.appendChild(video);
+        </script>
+        <h2 id='views' class="fa fa-eye" > {{x.views}} Προβολές</h2>
+        <div id='list'>
+            {% for x in all_part_video %}
+                <ul {% if forloop.counter > 2 %}style="display: none;"{% endif %}>
+                    <div class='border'>
+                        <img class='icon' src="https://res.cloudinary.com/hewckvlra/image/upload/v1720638206/multimedia_mqptv0.png" alt="icon" width="20" height="20">
+                        <a id='li' href="{% url 'homepage:show_video' x.chapter_title x.part_title x.part_video %}" >{{x.part_title}} <span>{{x.part_video}}</span></a>
+                    </div>
+                </ul>
+            {% endfor %}
+
+            {% if all_part_video|length > 2 %}
+                <button id="read-more-btn" class='read-more-btn'>Περισσότερα</button>
+                <button id="read-less-btn" class='read-less-btn'>Λιγότερα</button>
+            {% endif %}
+        </div>
+        
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var readMoreBtn = document.getElementById("read-more-btn");
+                var readLessBtn = document.getElementById("read-less-btn");
+        
+                readMoreBtn.addEventListener("click", function() {
+                    document.querySelectorAll('#list ul').forEach(function(ul, index) {
+                        if (index > 1) {
+                            ul.style.display = 'block';
+                        }
+                    });
+                    readMoreBtn.style.display = 'none';
+                    readLessBtn.style.display = 'inline';
+                });
+        
+                readLessBtn.addEventListener("click", function() {
+                    document.querySelectorAll('#list ul').forEach(function(ul, index) {
+                        if (index > 1) {
+                            ul.style.display = 'none';
+                        }
+                    });
+                    readLessBtn.style.display = 'none';
+                    readMoreBtn.style.display = 'inline';
+                });
+            });
+        </script>
+        <input style="display: none;" type="text" id="chapter_title" value="{{ x.chapter_title }}">
+        <input style="display: none;" type="text" id="part_video" value="{{ x.part_video }}">
+
+    {% endfor %}
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const videoContainer = document.getElementById('video-container');
+                var chapter_title = document.getElementById('chapter_title').value;
+                var part_video = document.getElementById('part_video').value;
+        
+                // Variables to track video start time, total duration, and minutes watched
+                let videoStarted = false;
+                let startTime = 0; // Initialize startTime to 0
+                let totalDuration = 0; // Initialize totalDuration to 0
+                let videoEnded = false; // Track if the video has ended
+        
+                // Variables to track URL change time
+                let urlChangeTime = null;
+        
+                // Add an event listener to detect when the video starts playing
+                video.addEventListener('play', function () {
+                    if (!videoStarted) {
+                        videoStarted = true;
+                        startTime = new Date().getTime();
+                        totalDuration = video.duration; // Get the total duration of the video
+                    }
+                });
+        
+                // Add an event listener to detect when the video ends
+                video.addEventListener('ended', function () {
+                    if (videoStarted) {
+                        videoEnded = true; // Set videoEnded to true when the video ends
+                        sendVideoDataToDjango(true, '00:00:00'); // Send true for videoEnded and 00:00:00 for time
+                    }
+                });
+        
+                // Add an event listener to detect when the user navigates away (changes the URL)
+                window.addEventListener('beforeunload', function () {
+                    if (!videoEnded && videoStarted) {
+                        // If the video hasn't ended but the user is leaving the page, send the time of URL change
+                        const currentTime = new Date().getTime();
+                        const timeOnPage = formatTime(currentTime - startTime);
+                        sendVideoDataToDjango(false, timeOnPage, true); // Send false for videoEnded and true for URL change
+                    }
+                });
+        
+                // Function to send data to Django view
+                function sendVideoDataToDjango(videoEnded, time, urlChange) {
+                    fetch("{% url 'homepage:add_whachtime' %}", {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRFToken': getCookie('csrftoken')
+                        },
+                        body: JSON.stringify({
+                            chapter_title: chapter_title,
+                            part_video: part_video,
+                            video_ended: videoEnded,
+                            time: time,
+                            url_change: urlChange // Include URL change flag
+                        })
+                    });
+                }
+        
+                // Function to format time as "00:00:00"
+                function formatTime(milliseconds) {
+                    const seconds = Math.floor(milliseconds / 1000);
+                    const hours = Math.floor(seconds / 3600);
+                    const minutes = Math.floor((seconds % 3600) / 60);
+                    const remainingSeconds = seconds % 60;
+        
+                    const formattedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
+                    return formattedTime;
+                }
+        
+                // Function to get CSRF token from cookies
+                function getCookie(name) {
+                    const cookieValue = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
+                    return cookieValue ? cookieValue.pop() : '';
+                }
+            });
+        </script>
+
+    <a href="{% url 'homepage:homepage' %}" class="button1">Αρχική Σελίδα</a>
+    <a onClick="javascript:history.go(-1);" class="button">Πίσω</a>
+
+</body>
+
+
+</html>
+{% endblock content %}

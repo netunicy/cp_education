@@ -1,0 +1,122 @@
+* {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    
+}
+
+h1 {
+    text-align: center;
+    border-radius: 10px;
+    background-color: lightblue;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    font-weight: bold;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-top: 25px;
+    font-size: 35px;
+}
+
+.button {
+    background-color: #20ADD3;
+    color: rgb(0, 0, 0);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-family: "Times New Roman", Times, serif;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    position: absolute;
+    right: 50px;
+    top: 100px;
+    border: 2px solid #000000;
+    font-weight: bolder;
+}
+
+.button:hover {
+    background-color: #BE96EB;
+}
+
+#text1 {
+    margin-top: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    color: blue;
+}
+#text2 {
+    margin-top: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.link {
+    margin-top: 200px;
+    margin-left: 50px;
+    margin-right: 50px;
+    color: #000000;
+    font-weight: bold;
+}
+.media {
+    margin-top: 0px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+@media only screen and (max-width: 500px) and (min-width:265px) {
+    h1 {
+        font-size: 25px;
+        margin-bottom: 70px;
+    }
+    .link {
+        font-size: 16px;
+        text-align: left;
+        margin-left: 0px;
+        margin-right: 15px;
+    }
+    .media {
+        margin-left: 0px;
+    }
+    #text1 {
+        font-size: 0px;
+        margin-left: 10px;
+        margin-right: 10px;
+        color: blue;
+    }
+    .button {
+        padding: 6px 12px;
+        font-size: 16px;
+        right: 20px;
+        top: 65px;
+    }
+}
+
+@media only screen and (max-width: 1000px) and (min-width: 501px) {
+    h1 {
+        font-size: 30px;
+        margin-bottom: 70px;
+    }
+    .link {
+        position: relative;
+        font-size: 18px;
+        margin-left: 2vw;
+    }
+    .media {
+        margin-top: auto;
+        margin-left: 2vw;
+    }
+    #text1 {
+        font-size: 0px;
+        margin-left: 10px;
+        margin-right: 10px;
+        color: blue;
+    }
+    .button {
+        padding: 6px 12px;
+        font-size: 16px;
+        right: 20px;
+        top: 70px;
+    }
+} 

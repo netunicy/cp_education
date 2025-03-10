@@ -1,0 +1,135 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'homepage/list_all_chapter.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'homepage/favicon.ico' %}" >
+    <title>News</title>
+</head>
+<body>
+    <!--<script>
+        document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+    });
+    </script>-->
+
+    {% if check == 1 %}
+
+        {% for x in data %}
+            <h1> Παρακολούθηση όλων των Κεφαλαίων του βιβλίου</h1>
+            <img class="image" src="{{x.image}}" >
+        {% endfor %}
+
+        <h2>Έχετε πρόσβαση στα πιο κάτω Κεφάλαια</h2>
+
+        <h3>Το Τεύχος περιλαμβάνει <span> {{all}} </span>Κεφάλαια</h3>
+
+        <div id='list'>
+            {% for x in video %}
+                <ul {% if forloop.counter > 2 %}style="display: none;"{% endif %}>
+                    <div class='border'>
+                        <img class='icon' src="https://res.cloudinary.com/hewckvlra/image/upload/v1720638206/multimedia_mqptv0.png" alt="icon" width="20" height="20">
+                        <a id='li' href="{% url 'homepage:show_video' x.chapter_title x.part_title x.part_video %}" >{{ x.chapter_title }}</a>
+                    </div>
+                </ul>
+            {% endfor %}  
+
+        
+            {% if video|length > 2 %}
+                <button id="read-more-btn" class='read-more-btn'>Περισσότερα</button>
+                <button id="read-less-btn" class='read-less-btn'>Λιγότερα</button>
+            {% endif %}
+        </div>
+        
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var readMoreBtn = document.getElementById("read-more-btn");
+                var readLessBtn = document.getElementById("read-less-btn");
+        
+                readMoreBtn.addEventListener("click", function() {
+                    document.querySelectorAll('#list ul').forEach(function(ul, index) {
+                        if (index > 1) {
+                            ul.style.display = 'block';
+                        }
+                    });
+                    readMoreBtn.style.display = 'none';
+                    readLessBtn.style.display = 'inline';
+                });
+        
+                readLessBtn.addEventListener("click", function() {
+                    document.querySelectorAll('#list ul').forEach(function(ul, index) {
+                        if (index > 1) {
+                            ul.style.display = 'none';
+                        }
+                    });
+                    readLessBtn.style.display = 'none';
+                    readMoreBtn.style.display = 'inline';
+                });
+            });
+        </script>
+        <a href="{% url 'homepage:homepage' %}" class="button">Αρχική Σελίδα</a>
+        <a onClick="javascript:history.go(-1);" class="button1">Πίσω</a>
+
+    {% else %}
+
+        <h1>Παρακολούθηση Κεφαλαίου: <span>{{title}}<span></h1>
+
+        {% for x in data %}
+            <img class="image" src="{{x.image}}" >
+        {% endfor %}
+        
+        <h2>Το κεφάλαιο περιλαμβάνει <span>{{all}}</span> παρουσίασεις</h2>
+
+        <div id='list'>
+            {% for x in video %}
+                <ul {% if forloop.counter > 2 %}style="display: none;"{% endif %}>
+                    <div class='border'>
+                        <img class='icon' src="https://res.cloudinary.com/hewckvlra/image/upload/v1720638206/multimedia_mqptv0.png" alt="icon" width="20" height="20">
+                        <a id='li' href="{% url 'homepage:show_video' x.chapter_title x.part_title x.part_video %}" >{{x.part_title}} <span>{{x.part_video}}</span></a>
+                    </div>
+                </ul>
+            {% endfor %} 
+
+            {% if video|length > 2 %}
+                <button id="read-more-btn" class='read-more-btn'>Περισσότερα</button>
+                <button id="read-less-btn" class='read-less-btn'>Λιγότερα</button>
+            {% endif %}
+        </div>
+        
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var readMoreBtn = document.getElementById("read-more-btn");
+                var readLessBtn = document.getElementById("read-less-btn");
+        
+                readMoreBtn.addEventListener("click", function() {
+                    document.querySelectorAll('#list ul').forEach(function(ul, index) {
+                        if (index > 1) {
+                            ul.style.display = 'block';
+                        }
+                    });
+                    readMoreBtn.style.display = 'none';
+                    readLessBtn.style.display = 'inline';
+                });
+        
+                readLessBtn.addEventListener("click", function() {
+                    document.querySelectorAll('#list ul').forEach(function(ul, index) {
+                        if (index > 1) {
+                            ul.style.display = 'none';
+                        }
+                    });
+                    readLessBtn.style.display = 'none';
+                    readMoreBtn.style.display = 'inline';
+                });
+            });
+        </script>
+        
+        <a href="{% url 'homepage:homepage' %}" class="button">Αρχική Σελίδα</a>
+        <a onClick="javascript:history.go(-1);" class="button1">Πίσω</a>
+    {% endif %}
+</body>
+</html>
+{% endblock content %}

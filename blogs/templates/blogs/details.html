@@ -1,0 +1,34 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'blogs/details.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'homepage/favicon.ico' %}" >
+    <title>Ανακοινώσεις</title>
+</head>
+<body>
+    
+    <h1>{{ post.title }}</h1>
+    <p id="author">Από: <span id='username'>{{ username }}</span></p>
+    <br/>
+    <img class="media" src="{{ post.image}}" alt="{{ post.title }}">
+    <br/><br/>
+    <br/>
+    <div class='article'>
+        <p>{{post.content|safe}}</p>
+    </div>
+    <br/> <br/>
+    
+    
+    <a href="{% url 'homepage:homepage' %}" class="button1">Αρχική Σελίδα</a>
+    
+    <a onClick="javascript:history.go(-1);" class="button">Πίσω</a>
+
+</body>
+
+</html>
+{% endblock content %}

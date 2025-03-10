@@ -1,0 +1,154 @@
+
+h1 {
+    font-size: 30px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: lightblue;
+    font-weight: bold;
+    margin-top: 2vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    padding: 5px;
+}
+
+.image {
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 4px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10vh;
+    height: 600px;
+    width: 400px;
+}
+
+
+.button1 {
+    background-color: #20ADD3;
+    color: black;
+    padding: 10px 16px;
+    text-align: center;
+    text-decoration: none;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 20px;
+    border-radius: 8px;
+    position: absolute;
+    right: 11rem;
+    margin-top: 3rem;
+    border: 2px solid #000000;
+}
+
+.button1:hover {
+    background-color: #BE96EB;
+
+}
+
+.button2 {
+    background-color: #f7cf06;
+    color: black;
+    padding: 10px 16px;
+    text-align: center;
+    text-decoration: none;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 20px;
+    border-radius: 8px;
+    position: absolute;
+    right: 5rem;
+    margin-top: 3rem;
+    border: 2px solid #000000;
+}
+
+.button2:hover {
+    background-color: #f1bf5b;
+
+}
+
+@media only screen and (max-width: 768px) and (max-height: 1024px) and (orientation: portrait) {
+
+    h1 {
+        font-size: 25px;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 10px;
+        margin-top: 1rem;
+    }
+    .button2 {
+        font-size: 20px;
+        padding: 4px 10px;
+        right: 5rem;
+        top: 4.5rem;
+        border-radius: 5px;
+        
+    }
+    .button1 {
+        font-size:20px;
+        padding: 4px 10px;
+        right:10rem;
+        top: 4.5rem;
+        border-radius: 5px;
+        
+    }
+    .image {
+        height: 300px;
+        width: 230px;
+        margin-top: 20vw;
+        margin-bottom: auto;
+    }
+    
+}
+
+@media only screen and (orientation: landscape) and (max-width: 1000px) {
+    h1 {
+        font-size: 25px;
+        margin-top: 2vh;
+    
+    }
+    .button2 {
+        font-size: 18px;
+        padding: 6px 12px;
+        right: 5rem;
+        margin-top: 2rem;
+        border-radius: 5px;
+    }
+    .button1 {
+        font-size: 18px;
+        padding: 6px 12px;
+        right: 10rem;
+        margin-top: 2rem;
+        border-radius: 5px;
+        
+    }
+    .image {
+        height: 300px;
+        width: 230px;
+    }
+    
+} 
+
+@media only screen and (min-width: 1920px) {
+    h1 {
+        font-size: 40px;
+        margin-top: 2vh;
+    
+    }
+    .button2 {
+        font-size: 25px;
+        padding: 10px 12px;
+        right: 7rem;
+        margin-top: 2rem;
+        border-radius: 5px;
+    }
+    .button1 {
+        font-size: 25px;
+        padding: 10px 12px;
+        right: 13rem;
+        margin-top: 2rem;
+        border-radius: 5px;
+        
+    }
+    .image {
+        margin-top: 3rem;
+        height: 550px;
+        width: 400px;
+    }
+}

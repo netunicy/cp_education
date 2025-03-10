@@ -1,0 +1,200 @@
+/* Login form css */
+body {
+    margin: 0px;
+    padding: 0px;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    width: 100%;
+    background-color: white;
+}
+
+input[type=text],
+input[type=email],
+input[type=password] {
+    width: 35%;
+    padding: 14px 20px;
+    margin: 10px 0;
+    border: 2px solid rgb(0, 0, 0);
+    box-sizing: border-box;
+    font-size: 20px;
+}
+form {
+    margin-top: 50px;
+    text-align: center;
+}
+h1{
+    margin-top: 50px;
+    text-align: center;
+    text-decoration: underline;
+}
+button {
+    background-color: #20ADD3;
+    width: 15%;
+    padding: 9px 5px;
+    cursor: pointer;
+    border: none;
+    color: #000000;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    border: 2px solid #000000;
+}
+
+button:hover {
+    background-color: #BE96EB;
+}
+
+#usr,
+#psw1,
+#email {
+    font-family: 'Times New Roman', Times, serif;
+    color: #000000;
+    font-size: 25px;
+    
+}
+
+#msg1 {
+    color: rgb(2, 23, 255);
+    margin-top: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+.container {
+    position: absolute;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    width: 100;
+    height: 300px;
+    text-align: right;
+}
+
+.button2 {
+    background-color: #20ADD3;
+    color: rgb(0, 0, 0);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-family: "Times New Roman", Times, serif;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    position: absolute;
+    right: 125px;
+    top: 100px;
+    border: 2px solid #000000;
+}
+
+.button2:hover {
+    background-color: #BE96EB;
+}
+
+#viewcode{
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+#star{
+    color: red;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+@media only screen and (max-width: 500px) and (min-width: 280px) {
+    .button2 {
+        font-size: 16px;
+        top: 50px;
+        right: 25px;
+        padding: 6px 10px;
+        position: absolute;
+        background-color: #f7cf06;
+
+    }
+    .border-box {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 25px;
+        text-align: center;
+        margin-top: 130px;
+    }
+
+    input[type=text],
+    input[type=email],
+    input[type=password] {
+        padding: 10px 20px;
+        font-size: 18px;
+        width: 70%;
+    }
+    
+    button {
+        font-size: 18px;
+        padding: 8px 12px;
+        width: 45%;
+        margin-top: 25px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+
+    #msg1 {
+        margin-top:35px;
+        font-size: 16px;
+        margin-left: 20px;
+    }
+    
+}
+
+@media only screen and (max-width: 1000px) and (min-width: 501px) {
+    .button2 {
+        font-size: 18px;
+        top: 20px;
+        right: 20px;
+        
+
+    }
+    .border-box {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 25px;
+        text-align: center;
+    }
+
+    input[type=text],
+    input[type=text],
+    input[type=password] {
+        padding: 10px 20px;
+        font-size: 18px;
+        width: 60%;
+    }
+    
+    button {
+        font-size: 18px;
+        padding: 10px 20px;
+        width: 40%;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+
+    #msg1 {
+        margin-top:35px;
+        font-size: 18px;
+        margin-left: 20px;
+    }
+} 

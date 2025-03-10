@@ -1,0 +1,33 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="el">
+    
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'homepage/book_image.css' %}">
+        <link rel="shortcut icon" type="image/png" href="{% static 'homepage/favicon.ico' %}" >
+        <title>Εξώφυλλο Βιβλίών</title>
+    </head>
+    
+<body>
+    <!--<script>
+        document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+    });
+    </script>-->
+    {% for x in data %}
+        <br />
+        <h1>{{x.book_title}}</h1>
+        <a type="button" class="button1" href="{% url 'homepage:book_content' x.ref_code_book %}">Περιεχόμενο</a>
+        <a href="{% url 'homepage:homepage' %}" class="button2">Πίσω</a>
+        <img class="image" src="{{x.image}}" alt="Εξωφυλλο Βιβλίου" title="Εξωφυλλο Βιβλίου">
+        <br />
+        <hr>
+    {% endfor %}
+
+</body>
+</html>
+
+{% endblock content %}

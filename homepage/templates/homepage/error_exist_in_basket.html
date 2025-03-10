@@ -1,0 +1,19 @@
+<!-- basket.html -->
+<!DOCTYPE html>
+<html lang="el">
+<html>
+<head>
+    <title>Your Basket</title>
+</head>
+<body>
+    <div id="msg">
+        {% if messages %}
+          {% for message in messages %}
+            <p><a {% if message.tags %} class="{{ message.tags }}"{% endif %}>
+              {% if message.level == DEFAULT_MESSAGE_LEVELS.error %}{% endif %}{{ message }}
+            </p>
+          {% endfor %}
+        {% endif %}
+    </div>
+</body>
+</html>

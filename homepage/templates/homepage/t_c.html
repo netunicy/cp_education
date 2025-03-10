@@ -1,0 +1,28 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'homepage/t_c.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'homepage/favicon.ico' %}" >
+    <title>Όροι και προϋποθέσεις</title>
+</head>
+<body>
+    {% for x in mylogo %}
+        <image src="{{x.mylogo}}" alt="logo" width="450" height="150" id='img'>
+        <div class="textt_c">
+            {% for x in t_c %}
+                {{ x.content|safe }}
+            {% endfor %}
+        </div>    
+    {% endfor %}
+    <a onClick="javascript:history.go(-1);" class="button1">Πίσω</a>
+    <a onClick="javascript:history.go(-1);" class="button2">Πίσω</a>
+    <br>
+    
+</body>
+
+</html>
+{% endblock content %}

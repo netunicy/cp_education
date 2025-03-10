@@ -1,0 +1,61 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="el">
+    
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'homepage/searchbar.css' %}">
+        <link rel="shortcut icon" type="image/png" href="{% static 'homepage/favicon.ico' %}" >
+        <title>Checkout</title>
+    </head>
+
+<body>
+
+    <h1>Αποτελέσματα Αναζήτησης</h1>
+    {% if user.is_authenticated %}
+        {% if data %}
+            {% for x in data %}
+                <div class='center'>
+                    <a href="{% url 'homepage:homepage' %}" class="button1">Πίσω</a>
+                    {% for j in gen_info %}
+                        <p id='p5'>{{j.book_title}}</p>
+                        <img class="image" src="{{j.image}}" >
+                        <p><a id="p3" href="{% url 'homepage:lesson_details_searchbar' j.ref_code_book x.chapter_title %}"> {{x.chapter_title}} </a></p>
+                    {% endfor %}
+                    <p></p>
+                    <hr color='black'>
+                    <br/>
+                    </div>
+            {% endfor %}
+        {% else %}
+            <a href="{% url 'homepage:homepage' %}" class="button1">Πίσω</a>
+            <p id='p4'>0 αποτελέσματα. <span>Παρακαλώ ελέγξτε την γλώσσα, την ορθογραφία και τον τονισμό των λέξεων που αναζητείτε!</span></p>
+        {% endif %}
+    {% else %}
+        {% if data %}
+            {% for x in data %}
+                <div class='center'>
+                <a href="{% url 'homepage:homepage' %}" class="button1">Πίσω</a>
+                {% for j in gen_info %}
+                    <p id='p5'>{{j.book_title}}</p>
+                    <img class="image" src="{{j.image}}" >
+                    <p><a id="p3" href="{% url 'accounts:login_user' %}"> {{x.chapter_title}} </a></p>
+                {% endfor %}
+                <p></p>
+                <hr></hr>
+                <br/>
+                </div>
+            {% endfor %}
+        {% else %}
+            <a href="{% url 'homepage:homepage' %}" class="button1">Πίσω</a>
+            <p id='p4'>0 αποτελέσματα.<br><br> <span>Παρακαλώ ελέγξτε την γλώσσα, την ορθογραφία και τον τονισμό των λέξεων που αναζητείτε!</span></p>
+        {% endif %}
+    {% endif %}
+        
+        
+    
+</body>
+</html>
+{% endblock content %}

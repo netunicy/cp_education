@@ -1,0 +1,143 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="el">
+    
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'homepage/lesson_details.css' %}">
+        <link rel="shortcut icon" type="image/png" href="{% static 'homepage/favicon.ico' %}" >
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <title>Checkout</title>
+    </head>
+    
+<body>
+    <!--<script>
+        document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+    });
+    </script>-->
+    
+    {% for x in data %}
+        <h1>{{x.book_title}}</h1>
+        <ul>
+            <li><a href="{% url 'homepage:homepage' %}">Αρχική Σελίδα</a></li>
+            <li><a href="{% url 'homepage:view_my_basket' %}"><i class="fa fa-shopping-cart" style="font-size:20px;color:red"></i>  Το Καλάθι μου</a></li>
+            <li><a href="{% url 'homepage:add_basket_item' chapter ref_code_book price %}" onclick="alert('Επιτυχία Καταχώρησης')">Προσθήκη στο Καλάθι</a></li>
+            <li><a onClick="javascript:history.go(-1);" id="backButton">Πίσω</a></li>
+        </ul>
+        
+        <script>
+            document.getElementById('topLink').addEventListener('click', function(event) {
+                event.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                localStorage.setItem('topClicked', 'true');
+            });
+            document.getElementById('backButton').addEventListener('click', function(event) {
+                if (localStorage.getItem('topClicked') === 'true') {
+                    history.go(-1);
+                } else {
+                    history.go(-1);
+                }
+                localStorage.removeItem('topClicked');
+            });
+        </script>
+        {% if messages %}
+            <div class="msg">
+                {% for message in messages %}
+                    <a {% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                        {{ message }}
+                    </a>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {% if check == 1 %}
+            <p id='p'>Τιμή: €{{price}}</p>
+        {% else %}
+            <p id='p'>Τιμή: €{{price}}</p>
+        {% endif %}
+        
+        <p id='chapter' ><span id='span1'>Έχετε επιλέξει:</span> {{chapter}}</p>
+        <p class='info' ><span id='span2'>Προσοχή: </span>Ελέγξτε το καλάθι σας πριν απο την εκτέλεση της αγοράς!</p>
+        <img class="image" src="{{x.image}}" alt="Εξωφυλλο Βιβλίου" title="Εξωφυλλο Βιβλίου"> 
+        <a href="{% url 'homepage:check_out_payment' %}"  class="buy_now">Αγορά</a>
+        
+        <hr></hr>
+        <p>Τι περιλαμβάνει:</p>
+        <div class='whatinclude'>
+            {% for j in what_includes %}
+                <div class="container" {% if forloop.counter > 2 %}style="display: none;"{% endif %}>
+                    <div class="div1">
+                        <img class='icon' src="https://res.cloudinary.com/hewckvlra/image/upload/v1720638206/multimedia_mqptv0.png" alt="icon" width="20" height="20">
+                        <p class='wh_incl'>{{ j.what_includes|safe }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+            <div id="message" class="message">Δεν έχετε πρόσβαση</div>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const inclTextElements = document.querySelectorAll('.wh_incl');
+                    const message = document.getElementById('message');
+
+                    inclTextElements.forEach(function(inclText) {
+                        inclText.addEventListener('mouseenter', function(event) {
+                            message.style.display = 'block';
+                            message.style.left = event.pageX + 'px';
+                            message.style.top = event.pageY + 'px';
+                        });
+                        inclText.addEventListener('mouseleave', function() {
+                            message.style.display = 'none';
+                        });
+                    });
+                });
+            </script>
+
+            {% if what_includes|length > 2 %}
+                <button id="read-more-btn" class='read-more-btn'>Περισσότερα</button>
+                <button id="read-less-btn" class='read-less-btn'>Λιγότερα</button>
+            {% endif %}
+        </div>
+        
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var readMoreBtn = document.getElementById("read-more-btn");
+                var readLessBtn = document.getElementById("read-less-btn");
+        
+                readMoreBtn.addEventListener("click", function() {
+                    document.querySelectorAll('.container').forEach(function(container, index) {
+                        if (index > 1) {
+                            container.style.display = 'block';
+                        }
+                    });
+                    readMoreBtn.style.display = 'none';
+                    readLessBtn.style.display = 'inline';
+                });
+        
+                readLessBtn.addEventListener("click", function() {
+                    document.querySelectorAll('.container').forEach(function(container, index) {
+                        if (index > 1) {
+                            container.style.display = 'none';
+                        }
+                    });
+                    readLessBtn.style.display = 'none';
+                    readMoreBtn.style.display = 'inline';
+                });
+            });
+        </script>
+        
+
+        <br><hr></hr>
+        <p id='p2'>Επιστροφή χρημάτων ισχύει μόνο αν το video δεν προβληθεί.<br/><a href="{% url 'homepage:Terms_and_Conditions' %}" class="accept">Διάβασε όρους και προυποθέσεις<a/></p>
+        <p id='p1'>***Η υπηρεσία διαρκεί ένα ακαδημαϊκο έτος από την ημέρα αγοράς</p> 
+    {% endfor %}
+    <a href="#" id="topLink" class="top-link">Κορυφή Σελίδας</a>
+    
+    
+
+</body>
+</html>
+
+{% endblock content %}

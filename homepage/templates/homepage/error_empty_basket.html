@@ -1,0 +1,25 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'homepage/error_empty_basket.css' %}">
+        <link rel="shortcut icon" type="image/png" href="{% static 'homepage/favicon.ico' %}" >
+    <title>Document</title>
+</head>
+<body>
+    <div class="msg">
+        {% if messages %}
+          {% for message in messages %}
+            <p><a {% if message.tags %} class="{{ message.tags }}"{% endif %}>
+              {% if message.level == DEFAULT_MESSAGE_LEVELS.error %}{% endif %}{{ message }}
+            </p>
+          {% endfor %}
+        {% endif %}
+    </div>
+    <a onClick="javascript:history.go(-1);" class="button1">Πίσω</a>
+</body>
+</html>
+{% endblock content %}

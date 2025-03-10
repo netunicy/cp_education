@@ -1,0 +1,41 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="el">
+    
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" href="{% static 'homepage/my_purchases.css' %}">
+        <link rel="shortcut icon" type="image/png" href="{% static 'homepage/favicon.ico' %}" >
+        <title>Checkout</title>
+    </head>
+
+<body>
+    <script>
+        document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+    });
+    </script>
+
+    <h1>Οι Αγορές μου</h1>
+        {% for x in purchases %}
+            <div class='center'>
+                <a href="{% url 'homepage:homepage' %}" class="button1">Πίσω</a>
+                <p id='p3'>{{x.book_title}}</p>
+                <img class="image" src="{{x.image}}" >
+                <p><a id="p1" href="{% url 'homepage:my_basket' x.chapter x.videos_url %}"> {{x.chapter}} <span> {{x.part}}</span></a></p>
+                <p></p>
+                <hr color='black'>
+                <br/>
+            </div>
+        {% empty %}
+            <a href="{% url 'homepage:homepage' %}" class="button1">Πίσω</a>
+            <p id='p4'>Δεν υπάρχουν αγορές</p>
+        {% endfor %}
+        
+        
+    
+</body>
+</html>
+{% endblock content %}

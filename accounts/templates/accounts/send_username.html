@@ -1,0 +1,36 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'accounts/send_username.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'homepage/favicon.ico' %}" >
+
+<body>
+    <h1>Επαναφορά Username</h1>
+    <a href="{% url 'homepage:homepage' %}" class="button1">Αρχική Σελίδα</a>
+    <a href="{% url 'accounts:login_user' %}" class="button2">Σύνδεση</a>
+    <form method="POST" action="">
+        {% csrf_token %}
+        <div class="border-box">
+            <label for="email" id="un">Email: </label>
+            <input type="email" name="email" placeholder="Email" id="uname" required=""><br />
+            <button type="submit" id="submit">Αποστολή</button>
+        </div>
+    </form>
+    <p id='title'><span>Ξεχάσατε τον Username σας;</span> Καταχωρήστε το <span>Email </span>σας και θα λάβετε το Username μέσω Email!</p>
+    <p style="color:blue;">
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.tags %}
+            {% endif %}{{ message }}
+        {% endfor %}
+    {% endif %}</p>
+</body>
+
+</html>
+{% endblock content %}

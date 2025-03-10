@@ -1,0 +1,341 @@
+h1 {
+    text-align: center;
+    font-size: 30px;
+    border-radius: 10px;
+    background-color: lightblue;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    font-weight: bold;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-top: 25px;
+}
+
+h2{
+    background-color: rgb(222, 190, 249);
+    text-align: center;
+    border-radius: 8px;
+    border: solid 1px black;
+    margin-left:  50%;
+    transform: translate(-50%);
+    width: 33%;
+    padding: 10px;
+    
+}
+
+h3 {
+    text-align: center; /* Center align text within h3 */
+    padding: 10px;
+    font-size: 25px;
+}
+
+.image {
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 4px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    height: 450px;
+    width: 300px;
+}
+
+#list {
+    font-size: 20px;
+    font-family: Helvetica;
+    list-style-position: inside;
+    margin-bottom: 10rem;
+    margin-top: 2rem;
+    margin-left: 28rem;
+}
+
+.border {
+    border: 1px solid rgb(141, 141, 142);
+    border-radius: 8px;
+    display: inline-block;
+    text-align: left;
+    padding: 10px 50px 10px 10px;
+    background-color: lightblue;
+    position: relative;
+    
+}
+
+.icon {
+    position: absolute;
+    right: 10px; /* Align icon 10px from the left of the .border element */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Center vertically */
+}
+
+span {
+    font-weight: bolder;
+    color: rgb(1, 86, 185);
+}
+
+#li {
+    color: black;
+}
+
+.button {
+    background-color: #20ADD3;
+    color: rgb(0, 0, 0);
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-family: "Times New Roman", Times, serif;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    position: absolute;
+    right: 2rem;
+    top: 8rem;
+    border: 2px solid #000000;
+    font-weight: bolder;
+}
+
+.button:hover {
+    background-color: #BE96EB;
+}
+
+.button1 {
+    background-color: #f7cf06;
+    color: rgb(0, 0, 0);
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-family: "Times New Roman", Times, serif;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    position: absolute;
+    right: 13rem;
+    top: 8rem;
+    border: 2px solid #000000;
+    font-weight: bolder;
+}
+
+.button1:hover {
+    background-color: #f1bf5b;
+}
+
+#more {
+    display: none;
+}
+
+.read-more-btn {
+    font-size: 16px;
+    padding: 8px 12px;
+    background-color: rgb(248, 195, 116);
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-left: 4%;
+}
+.read-less-btn {
+    display: none;
+    font-size: 16px;
+    padding: 8px 12px;
+    background-color: rgb(248, 195, 116);
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-left: 4%;
+}
+
+
+.read-more-btn:hover {
+    background-color: rgb(235, 249, 108);
+
+}
+.read-less-btn:hover {
+    background-color: rgb(235, 249, 108);
+}
+
+
+@media only screen and (max-width: 768px) and (max-height: 1024px) and (orientation: portrait) {
+    h1 {
+        font-size: 18px;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 8px;
+    }
+    h2 {
+        width: 90%;
+        font-size: 16px;
+        text-align: center;
+        border-radius: 12px;
+        padding: 8px;
+        border: solid 1px black;
+        margin-top: auto;
+    }
+    h3 {
+        font-size: 16px;
+        text-align: center;
+        margin-left:  10px;
+        margin-right: 10px;
+    }
+    .button {
+        font-size: 18px;
+        padding: 5px 6px;
+        right: 6rem;
+        top: 6rem;
+        border-radius: 8px;
+    }
+    .button1 {
+        font-size: 18px;
+        padding: 5px 6px;
+        right: 2rem;
+        top: 6rem;
+        border-radius: 8px;
+    }
+    .image {
+        height: 300px;
+        width: 200px;
+        margin-top: 5rem;
+        margin-bottom: 2rem;
+    }
+    .read-more-btn {
+        font-size: 14px; /* Smaller font size */
+        padding: 6px 10px; /* Reduced padding */
+        margin-left: 40px; /* Adjusted margin-left */
+    }
+    .read-less-btn {
+        font-size: 14px; /* Smaller font size */
+        padding: 6px 10px; /* Reduced padding */
+        margin-left: 40px; /* Adjusted margin-left */
+    }
+
+    #list {
+        font-size: 16px; /* Smaller font size */
+        margin-left: auto;
+        margin-right: 2rem;
+        margin-top: 2rem;
+    }
+
+    .icon {
+        right: 5px; /* Adjust icon position */
+    }
+    .border {
+        padding: 10px 50px 10px 10px;
+        
+    }
+    #li {
+        font-size: 16px;
+        text-decoration: none;
+    }
+    
+}
+
+@media only screen and (orientation: landscape) and (max-width: 1000px) {
+    h1 {
+        font-size: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 10px;
+    }
+    h2 {
+        width: 70%;
+        font-size: 20px;
+        text-align: center;
+        border-radius: 12px;
+        padding: 8px;
+    }
+    .button {
+        font-size: 18px;
+        padding: 5px 6px;
+        right: 2rem;
+        top: 7rem;
+        border-radius: 8px;
+    }
+    .button1 {
+        font-size: 18px;
+        padding: 5px 6px;
+        right: 11rem;
+        top: 7rem;
+        border-radius: 8px;
+    }
+    .image {
+        height: 300px;
+        width: 200px;
+        margin-top: 3rem;
+    }
+    .read-more-btn {
+        font-size: 15px; /* Slightly smaller font size */
+        padding: 7px 12px; /* Adjusted padding */
+        margin-left: 40px; /* Adjusted margin-left */
+    }
+    .read-less-btn {
+        font-size: 15px; /* Slightly smaller font size */
+        padding: 7px 12px; /* Adjusted padding */
+        margin-left: 40px; /* Adjusted margin-left */
+    }
+
+    #list {
+        font-size: 18px; /* Slightly smaller font size */
+        margin-left: 4rem;
+        text-decoration: none;
+    }
+
+    .icon {
+        right: 8px; /* Adjust icon position */
+    }
+    
+} 
+@media only screen and (min-width: 1920px) {
+    h1 {
+        font-size: 40px;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 10px;
+    }
+    h2 {
+        width: 70%;
+        font-size: 35px;
+        text-align: center;
+        border-radius: 12px;
+        padding: 8px;
+    }
+    .button {
+        font-size: 25px;
+        padding: 10px 12px;
+        right: 2rem;
+        top: 9rem;
+        border-radius: 8px;
+    }
+    .button1 {
+        font-size: 25px;
+        padding: 10px 12px;
+        right: 15rem;
+        top: 9rem;
+        border-radius: 8px;
+    }
+    .image {
+        height: 600px;
+        width: 450px;
+        margin-top: 7rem;
+    }
+    .read-more-btn {
+        font-size: 30px; /* Slightly smaller font size */
+        padding: 10px 12px; /* Adjusted padding */
+        margin-left: 5rem; /* Adjusted margin-left */
+    }
+    .read-less-btn {
+        font-size: 30px; /* Slightly smaller font size */
+        padding: 10px 12px; /* Adjusted padding */
+        margin-left: 5rem; /* Adjusted margin-left */
+    }
+
+    #list {
+        font-size: 30px; /* Slightly smaller font size */
+        margin-left: 15rem;
+        text-decoration: none;
+    }
+
+    .icon {
+        right: 8px; /* Adjust icon position */
+    }
+
+}

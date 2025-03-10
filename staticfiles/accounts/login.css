@@ -1,0 +1,225 @@
+/* Login form css */
+body {
+    margin: 0px;
+    padding: 0px;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    width: 100%;
+    background-color: white;
+}
+
+input[type=text],
+input[type=password] {
+    width: 35%;
+    padding: 12px 20px;
+    margin: 15px 0;
+    display: inline-block;
+    border: 2px solid rgb(0, 0, 0);
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+button {
+    background-color: #20ADD3;
+    width: 15%;
+    padding: 9px 5px;
+    cursor: pointer;
+    border: none;
+    color: #000000;
+    font-size: 20px;
+    font-weight: bold;
+    border: 2px solid #000000;
+    border-radius:8px 40px 8px;
+}
+
+button:hover {
+    opacity: 0.8;
+    background-color: #BE96EB;
+}
+
+#un,
+#ps {
+    font-family:'Times New Roman', Times, serif;
+    color: #000000;
+    font-size: 25px;
+}
+
+
+.border-box {
+    font-size: 40px;
+    margin-top: 30px;
+
+}
+
+.p1 {
+    margin-top: 50px;
+    font-size: 20px;
+    font-weight: normal;
+    text-align: center;
+}
+
+#p2 {
+    color: blue;
+    font-weight: bold;
+    text-align: center;
+    margin-top:45px;
+}
+
+#p3 {
+    color: blue;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+}
+
+span {
+    color: blue;
+    font-weight: bolder;
+}
+
+#msg{
+    color: rgb(0, 0, 0);
+    background-color:rgb(245, 243, 149);
+    border-radius: 8px;
+    display: inline-block;
+    padding: 0 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.btn33 {
+    background-color: #20ADD3;
+    color: rgb(0, 0, 0);
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: "Times New Roman", Times, serif;
+    border-radius: 12px;
+    position: absolute;
+    right: 100px;
+    top: 50px;
+    border: 2px solid #000000;
+    font-weight: bolder;
+}
+
+.btn33:hover {
+    background-color: #BE96EB;
+
+}
+
+h1 {
+    font-size: 30px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+#submit{
+    margin-top: 30px;
+}
+
+@media only screen and (max-width: 768px) and (max-height: 1024px) and (orientation: portrait) {
+    .btn33 {
+        font-size: 18px;
+        font-weight:normal;
+        margin-top: 0rem;
+        margin-bottom: 1rem;
+        right: 2rem;
+        font-weight: bold;
+
+    }
+    .border-box {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 30px;
+        margin-top: 7rem;
+        text-align: center;
+        text-decoration: underline;
+    }
+
+    input[type=text],
+    input[type=password] {
+        padding: 14px 20px;
+        font-size: 16px;
+        width: 50%;
+    }
+    #un,
+    #ps {
+        font-size: 18px;
+        padding: 0px;
+    }
+    button {
+        font-size: 18px;
+        padding: 10px 20px;
+        width: 30%;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    #p2 #p3 {
+        font-size: 16px;
+        margin-left: 30px;
+    }
+    .p1 {
+        font-size: 16px;
+        margin-left: 0px;
+        margin-top: 30px;
+    }
+
+    #msg {
+        margin-top:5vh;
+        font-size: 16px;
+        margin-left: 20px;
+        margin-right: 20px;
+        
+    }
+    
+}
+
+@media only screen and (max-width: 1000px) and (orientation: landscape) {
+    .btn33 {
+        font-size: 16px;
+        font-weight:normal;
+        top: 25px;
+        right: 20px;
+        font-weight: bold;
+    }
+    #p2 {
+        font-size: 18px;
+        text-align: center;
+    }
+    #p3{
+        font-size: 18px;
+        text-align: center;
+    }
+    
+    .p1 {
+        font-size: 18px;
+        margin-left: 0px;
+        margin-top: 30px;
+    }
+    #msg {
+        margin-top:30px;
+        font-size: 16px;
+        margin-left: 20px;
+    }
+    h1 {
+        font-size: 40px;
+        text-align: center;
+        text-decoration: underline;
+    }
+    button {
+        padding: 14px 20px;
+        font-size: 18px;
+        width: 30%;
+    }
+  }

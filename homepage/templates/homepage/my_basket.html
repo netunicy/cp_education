@@ -1,0 +1,48 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="el">
+    
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" href="{% static 'homepage/my_basket.css' %}">
+        <link rel="shortcut icon" type="image/png" href="{% static 'homepage/favicon.ico' %}" >
+        <title>Checkout</title>
+    </head>
+
+<body>
+    <script>
+        document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+    });
+    </script>
+
+    <h1>Το Καλάθι μου</h1>
+        {% for x in basket %}
+            <a href="{% url 'homepage:check_out_payment' %} " class="buy_now">Εκτέλεση Αγορών</a>
+            <a href="{% url 'homepage:homepage' %}" class="button1">Αρχική Σελίδα</a>
+            <a onClick="javascript:history.go(-1);" class="button2">Πίσω</a>
+            <div class='center'>
+                <p id='p3'>{{x.book_title}}</p>
+                <img class="image" src="{{x.image}}" >
+                <br/>
+                <p><a id="p1" href="{% url 'homepage:my_basket' x.chapter x.videos_url %}"> {{x.chapter}} <span>{{x.part}}</span></a></p>
+                <a  id="p2"  href="{% url 'homepage:delete' x.id %}">Διαγραφή</a>
+                <p></p>
+                <hr color='black'>
+            </div>
+                
+                
+        {% empty %}
+            <p id='p4'>Το Καλάθι σας είναι Άδειο</p>
+            <a href="{% url 'homepage:homepage' %}" class="button1">Αρχική Σελίδα</a>
+            <a onClick="javascript:history.go(-1);" class="button2">Πίσω</a>
+        {% endfor %}
+        
+        
+        
+    
+</body>
+</html>
+{% endblock content %}

@@ -1,0 +1,99 @@
+.textt_c{
+    margin-bottom: 200px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+img {
+    margin-top: 30px;
+    margin-left: 25px;
+    margin-bottom: 50px;
+}
+
+.button1 {
+    background-color: #f7cf06;
+    color: rgb(0, 0, 0);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-family: "Times New Roman";
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    position: absolute;
+    right: 80px;
+    top: 130px;
+    border: 2px solid #000000;
+}
+
+.button1:hover {
+    background-color: #f1bf5b;
+}
+
+.button2 {
+    background-color: #f7cf06;
+    color: rgb(0, 0, 0);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-family: "Times New Roman";
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    position: absolute;
+    right: 80px;
+    top:1450px;
+    margin-bottom: 100px;
+    border: 2px solid #000000;
+}
+
+.button2:hover {
+    background-color: #f1bf5b;
+}
+
+@media only screen and (max-width: 500px) and (min-width: 280px) {
+    .textt_c{
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 60px;
+    }
+    .button1 {
+        font-size: 14px;
+        padding: 8px 14px;
+        top:120px;
+        right: 50px;
+    }
+    .button2 {
+        font-size: 14px;
+        padding: 8px 14px;
+        right: 50px;
+        top:3700px;
+        margin-bottom: 50px;
+
+    }
+    #img {
+        width: 85%;
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 1000px) and (min-width: 501px) {
+    .textt_c{
+        margin-left: 25px;
+        margin-right: 25px;
+        margin-top: 80px;
+    }
+    .button1 {
+        top:200px;
+        right: 50px;
+    }
+    .button2 {
+        right: 50px;
+        top:2200px;
+
+    }
+}

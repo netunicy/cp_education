@@ -1,0 +1,22 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'accounts/send_username_done.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'homepage/favicon.ico' %}" >
+</head>
+<body>
+    <a href="{% url 'homepage:homepage' %}" class="btn33">Αρχική Σελίδα</a>
+    <a href="{% url 'accounts:login_user' %}" class="button2">Σύνδεση</a>
+    <h1 style="color:blue;">Επιτυχής Αποστολή Username</h1>
+    <p>Το Username σας θα το λάβετε άμεσα στο Ηλεκτρονικό σας Ταχυδρομείο!</p>
+    
+</body>
+</html>
+
+{% endblock content %}

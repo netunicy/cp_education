@@ -1,0 +1,70 @@
+{% block content %} 
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Εγγραφή</title>
+    <link rel="stylesheet" href="{% static 'accounts/register.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'homepage/favicon.ico' %}" >
+  </head>
+<body>
+  
+  <form method="POST" action="{% url 'accounts:user_register' %}" autocomplete="off">
+    {% csrf_token %}
+    <div id="container">
+      <label for="first_name" id="name">First Name: </label><br>
+      <input type="text" name="first_name" placeholder="First Name:"required="" size="30"/><br>
+      
+      <label for="last_name" id="name">Last Name: </label><br>
+      <input type="text" name="last_name" placeholder="Last Name:"required="" size="30"/><br>
+   
+      <label for="email" id="name">Email: </label><br>
+      <input type="email" name="email" placeholder="Email" required="" size="30"/><br>
+ 
+      <label for="username" id="usr">Username: </label><br>
+      <input type="text" name="username" placeholder="User name" required="" size="30" /><br>
+     
+      <label for="password1" id="psw">Password: </label><br>
+      <input type="password" name="password1" placeholder="Password" required="" size="30"/><br>
+     
+      <label for="password2" id="psw">Confirm Password: </label><br>
+      <input type="password" name="password2" placeholder="Confirm Password" required="" size="30"/><br>
+      
+      <label for="t_c" class="t_and_c"> 
+        <br>
+        Κάνοντας κλικ, επιβεβαιώνω ότι είμαι άνω των 18   
+        <br>
+        ετών και συμφωνώ με τους Όρους, τις Προϋποθέσεις
+        <br>
+        και την Πολιτική Απορρήτου της <span id='one'>CP</span> <span id='two'>School for</span> <span id='three'>All</span>
+        <br>
+        και συμφωνώ να συμμορφώνομαι με τον
+        <br>
+        Κώδικα Δεοντολογίας
+      </label>
+      <br>  
+      <input type="checkbox" id="t_c1" name="t_c" required="" value="True"/><br>
+ 
+      <a href="{% url 'homepage:Terms_and_Conditions' %}" id="accept">Όροι και Προυποθέσεις</a><br>
+      <div id="msg1">
+        {% if messages %}
+          {% for message in messages %}
+            <p><a {% if message.tags %} class="{{ message.tags }}"{% endif %}>
+              {% if message.level == DEFAULT_MESSAGE_LEVELS.error %}{% endif %}{{ message }}
+            </p>
+          {% endfor %}
+        {% endif %}
+      </div>
+      <button>Εγγραφή</button><br>
+    </div>
+    <h1>Εγγραφή</h1>
+    <a href="{% url 'homepage:homepage' %}" class="button1">Αρχική Σελίδα</a>
+    <a href="{% url 'accounts:login_user' %}" class="button2">Σύνδεση</a>
+  </form>
+  
+</body>
+</html>
+{% endblock content %}

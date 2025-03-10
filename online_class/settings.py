@@ -73,11 +73,19 @@ WSGI_APPLICATION = 'online_class.wsgi.application'
 
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR,'db.sqlite3'),
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd48bt70segul3c',
+        'USER': 'u7cutb55nc591d',
+        'PASSWORD': 'p518aecec04b3dcb9b6e5a784bc8b86ed31eed876839204490c0ec6ed18a977e9',
+        'HOST': 'ec2-54-205-238-146.compute-1.amazonaws.com',
+        'PORT': '5432',
+        'OPTIONS': {
+            'options': '-c timezone=Europe/Athens',
+        }
     }
 }
+
 
 
 

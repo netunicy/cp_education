@@ -12,6 +12,9 @@ html, body {
     margin-left: 4rem;
     margin-top: 4rem;
 }
+#note {
+    margin-left: 2rem;
+}
 
 .dropbutn {
     background-color: #20ADD3;

@@ -86,12 +86,11 @@ def partner_register(request):
 
     else:
         form = UserProfileForm()
-    
-    context = {
-        "form": form,
-        "logo": logo,
-    }
-    return render(request, "partner_register.html", context)
+        context = {
+            "form": form,
+            "logo": logo,
+        }
+        return render(request, "partner_register.html", context)
 
 
 def partner_done(request):

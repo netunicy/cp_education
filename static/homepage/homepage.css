@@ -557,7 +557,7 @@ h2 {
     display: block;
 }
 
-@media only screen and (max-width: 768px) and (max-height: 1024px) and (orientation: portrait) {
+@media only screen and (max-width: 768px) and (orientation: portrait) {
     body, html {
         overflow-x: hidden;
     }
@@ -761,7 +761,7 @@ h2 {
     }
 }
 
-@media only screen and (max-width: 1000px) and (orientation: landscape) {
+@media only screen and (max-width: 1024px) and (orientation: landscape) {
     
     .logo {
         width: 400px;
@@ -921,7 +921,7 @@ h2 {
     }
 }
 
-@media only screen and (min-width: 1920px) {
+@media only screen and (min-width: 1025px) and (max-width: 1920px) {
     html, body {
         font-size: 30px;
         width: 100%;
@@ -1286,4 +1286,9 @@ h2 {
     .primary-box1 .nav-link {
         font-size: 1rem; /* Μείωση του μεγέθους γραμματοσειράς για καλύτερη εφαρμογή */
     }
+}
+
+/* Πολύ μεγάλες οθόνες (QHD & 4K) */
+@media only screen and (min-width: 1921px) {
+
 }

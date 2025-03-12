@@ -7,6 +7,7 @@ body {
     min-height: 100vh;
      /* Ensures the body covers the full viewport height */
 }
+
 footer {
     position: absolute;
     background-color: #4d4d4d;
@@ -99,7 +100,7 @@ footer p {
         max-width: 100%;
         min-height: auto;
         position: relative;
-        top: 7rem ; /* Adjust spacing between the image and footer */
+        top: 5rem ; /* Adjust spacing between the image and footer */
         padding: 10px 0;
     }
 }
@@ -109,18 +110,18 @@ footer p {
         width: 100%;
         height: auto;
         position: absolute;
-        top: 320vh ; /* Adjust spacing between the image and footer */
+        top: 290vh ; /* Adjust spacing between the image and footer */
         padding: 10px 0;
     }
     
 }
 
-@media only screen and (min-width: 1025px) and (max-width: 1920px) {
+@media only screen and (min-width: 1024px) and (max-width: 1366px) {
     footer {
         width: 100%;
         max-height: 70%;
-        position: absolute;
-        top: 250vh ; /* Adjust spacing between the image and footer */
+        position: relative;
+        top: 240vh ; /* Adjust spacing between the image and footer */
         padding: 10px 0;
     }
     footer * {
@@ -129,4 +130,19 @@ footer p {
     }
     
     
+}
+
+@media only screen and (min-width: 1367px) and (max-width: 1919px) {
+    footer {
+        width: 100%;
+        max-height: 70%;
+        position: relative;
+        top: 240vh ; /* Adjust spacing between the image and footer */
+        padding: 10px 0;
+    }
+    footer * {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
 }

@@ -769,10 +769,10 @@ h2 {
     }
 }
 
-@media only screen and (max-width: 775px) and (orientation: landscape) {
+@media only screen and (max-width: 768px) and (orientation: landscape) {
     
     .logo {
-        width: 280px;
+        width: 350px;
         height: auto;
         margin-top: 3rem;
         margin-left: 2rem;
@@ -787,7 +787,7 @@ h2 {
     .search-container {
         top: 6rem;
         right: 3rem;
-        width: 35%;
+        width: 30%;
     }
 
     .search-container input[type=text] {
@@ -859,26 +859,26 @@ h2 {
     }
 
     .login-box {
-        width: 10rem;
+        width: 9rem;
         top: 22rem;
         left: 3rem;  
     }
 
     .register-box {
-        width: 10rem;
+        width: 9rem;
         top: 22rem;
         left: 50%;
         transform: translateX(-50%);
     }
 
     .t_c-box {
-        width: 10rem; /* Αύξηση του πλάτους για καλύτερη εφαρμογή */
+        width: 9rem; /* Αύξηση του πλάτους για καλύτερη εφαρμογή */
         top: 22rem; /* Μείωση του margin-top για πιο συμβατή τοποθέτηση */
         right: 3rem;
     }
 
     .t_c-box1 {
-        width: 10rem;
+        width: 9rem;
         top: 22rem;
         left: 50%;
         transform: translateX(-50%);
@@ -886,48 +886,48 @@ h2 {
     
     
     .Partnership-box {
-        width: 10rem;
+        width: 9rem;
         top: 32rem;
         left: 3rem;
     }
 
     .Partnership-box1 {
-        width: 10rem;
+        width: 9rem;
         top: 22rem;
         right: 3rem;
     }
 
     .news-box {
-        width: 10rem;
+        width: 9rem;
         top:32rem;
         left: 50%;
         transform: translateX(-50%);
     }
 
     .news-box1 {
-        width: 10rem;
+        width: 9rem;
         top: 22rem;
         left: 3rem; 
     }
     
     .contact-box {
-        width: 10rem;
+        width: 9rem;
         top: 32rem;
         right:3rem;
     }
     .contact-box1 {
-        width: 10rem;
+        width: 9rem;
         top: 33rem;
         left: 3rem;
     }
     .primary-box {
-        width: 10rem;
+        width: 9rem;
         top:46rem;
         left: 3rem;
         z-index: 10;
     }
     .primary-box1 {
-        width: 10rem;
+        width: 9rem;
         top:50rem;
         left: 3rem;
         z-index: 10;

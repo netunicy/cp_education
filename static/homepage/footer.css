@@ -105,12 +105,12 @@ footer p {
     }
 }
 /* other mobile */
-@media only screen and (max-width: 775px) and (orientation: landscape) {
+@media only screen and (max-width: 768px) and (orientation: landscape) {
     footer {
         width: 100%;
         height: auto;
         position: absolute;
-        top: 65rem ; /* Adjust spacing between the image and footer */
+        top: 60rem ; /* Adjust spacing between the image and footer */
         padding: 10px 0;
     }
     

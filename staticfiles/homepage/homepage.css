@@ -769,7 +769,7 @@ h2 {
     }
 }
 
-@media only screen and (max-height: 450px) and (orientation: landscape) {
+@media only screen and (max-width: 775px) and (orientation: landscape) {
     
     .logo {
         width: 280px;

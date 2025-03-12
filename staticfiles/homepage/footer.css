@@ -121,7 +121,7 @@ footer p {
         width: 100%;
         max-height: 70%;
         position: relative;
-        top: 200vh ; /* Adjust spacing between the image and footer */
+        top: 10rem ; /* Adjust spacing between the image and footer */
         padding: 10px 0;
     }
     footer * {

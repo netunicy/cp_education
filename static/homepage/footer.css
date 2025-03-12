@@ -93,7 +93,7 @@ footer p {
     color: #dcdada;
 }
 
-
+/* mobile */
 @media only screen and (max-width: 768px) and (orientation: portrait) {
     
     footer {
@@ -104,20 +104,29 @@ footer p {
         padding: 10px 0;
     }
 }
-
+/* other mobile */
 @media only screen and (max-width: 1024px) and (orientation: landscape) {
     footer {
         width: 100%;
         height: auto;
         position: absolute;
-        top: 290vh ; /* Adjust spacing between the image and footer */
+        top: 65rem ; /* Adjust spacing between the image and footer */
         padding: 10px 0;
     }
     
 }
+/* s8+ */
+@media only screen and (max-width: 740px) and (max-height: 412px) and (orientation: landscape) {
+    footer {
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 45rem ; /* Adjust spacing between the image and footer */
+        padding: 10px 0;
+    }
+}
 
-/* laptop */
-@media only screen and (min-width: 1024px) and (max-width: 1919px) {
+@media only screen and (min-width: 1080px) and (max-width: 1366px) {
     footer {
         width: 100%;
         max-height: 70%;
@@ -130,4 +139,32 @@ footer p {
         line-height: 1.5;
     }
 
+}
+/* laptop */
+@media only screen and (min-width: 1367px) and (max-width: 1599px) {
+    footer {
+        width: 100%;
+        max-height: 70%;
+        position: relative;
+        top: 75rem ; 
+        padding: 10px 0;
+    }
+    footer * {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+}
+
+@media only screen and (min-width: 1600px) and (max-width: 1920px) {
+    footer {
+        width: 100%;
+        max-height: 70%;
+        position: relative;
+        top: 92rem ; 
+        padding: 10px 0;
+    }
+    footer * {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
 }

@@ -13,7 +13,8 @@ html, body {
     margin-top: 4rem;
 }
 #note {
-    margin-left: 2rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
 }
 
 .dropbutn {
@@ -147,7 +148,7 @@ html, body {
 
 h2 {
     position: absolute;
-    margin-top: 4rem;
+    margin-top: 2rem;
     margin-left: 4rem;
     font-size: 1rem;
     background-color: rgb(245, 239, 172); /* Light gray background */
@@ -260,12 +261,12 @@ h2 {
     text-align: center;
     border-radius: 5px;
     background-color: #f9f9f9;
-    top: 45rem; /* Μείωση του margin-top για πιο συμβατή τοποθέτηση */
-    left: 4rem; /* Κ
+    top: 45rem;
+    left: 4rem;
 }
 
 .Partnership-box:hover img {
-    transform: scale(1); /* Zoom in to original size on hover */
+    transform: scale(1);
 }
 
 .Partnership-box .nav-link{
@@ -570,7 +571,7 @@ h2 {
 
     .dropdn {
         position: relative;
-        top: 5rem;
+        top: 6rem;
         right: 5%;
         transform: translate(35%);
         z-index: 10; /* Φέρνει το στοιχείο μπροστά από τα υπόλοιπα */
@@ -589,12 +590,13 @@ h2 {
     .search-container {
         position: relative;
         top: 5rem;
-        left: 30%; /* Μετακίνηση 25% προς τα δεξιά */
-        max-width: 80%;
+        left: 20%; /* Μετακίνηση 25% προς τα δεξιά */
+       
     }
 
     .search-container input[type=text] {
         font-size: 0.80rem;
+        max-width: 60%;
       }
     
     .search {
@@ -608,11 +610,15 @@ h2 {
     .success_messages .full-message {
         display: none; /* Show the full message by default */
     }
-
+    #note {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        text-align: justify;
+    }
     h2 {
         position: relative;
         margin-left: 1rem;
-        margin-top: 2rem;
+        margin-top: 1rem;
         font-size: 0.75rem;
         padding: 10px;
 
@@ -766,23 +772,22 @@ h2 {
 @media only screen and (max-width: 1024px) and (orientation: landscape) {
     
     .logo {
-        width: 350px;
-        height: 125px;
+        width: 280px;
+        height: auto;
         margin-top: 3rem;
         margin-left: 2rem;
     }
     .dropdn {
         position: absolute;
-        top: 20vh;
-        right: 5vw;
+        top: 13rem;
+        right: 3rem;
         width: max-content;
     }
 
     .search-container {
-        position: absolute;
-        top: 12rem;
-        right: 5vw;
-        max-width: 80%;
+        top: 6rem;
+        right: 3rem;
+        width: 35%;
     }
 
     .search-container input[type=text] {
@@ -800,11 +805,15 @@ h2 {
     .success_messages .full-message {
         display: inline;
     }
+    #note {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        text-align: justify;
+    }
 
     h2 {
-        position: absolute;
-        margin-left: 1rem;
-        top: 5rem;
+        margin-left: 2rem;
+        margin-top: 1rem;
         font-size: 0.5rem;
         padding: 10px;
 
@@ -839,11 +848,11 @@ h2 {
     .second_title1 {
         font-size: 1.5rem;
         left: 2rem;
-        top: 41rem;
+        top: 45rem;
     }
     
     #second_line1 {
-        top: 43.5rem;
+        top: 47.5rem;
         left: 50%;
         transform: translate(-50%);
         width: 90%;
@@ -908,7 +917,7 @@ h2 {
     }
     .contact-box1 {
         width: 10rem;
-        top: 32rem;
+        top: 33rem;
         left: 3rem;
     }
     .primary-box {
@@ -919,18 +928,183 @@ h2 {
     }
     .primary-box1 {
         width: 10rem;
-        top:45rem;
+        top:50rem;
         left: 3rem;
         z-index: 10;
     }
 }
+@media only screen and (max-width: 740px) and (max-height: 412px) and (orientation: landscape) {
+    
+    .logo {
+        width: 280px;
+        height: auto;
+        margin-top: 3rem;
+        margin-left: 2rem;
+    }
+    .dropdn {
+        position: absolute;
+        top: 13rem;
+        right: 2rem;
+        width: max-content;
+    }
 
-@media only screen and (min-width: 1024px) and (max-width: 1919px) {
+    .search-container {
+        top: 6rem;
+        right: 4rem;
+        width: 35%;
+        height: auto;
+    }
+
+    .search-container input[type=text] {
+        font-size: 0.80rem;
+      }
+    
+    .search {
+        font-size: 0.8rem;
+    }
+
+    .success_messages .short-message {
+        display: none;
+    }
+    
+    .success_messages .full-message {
+        display: inline;
+    }
+    #note {
+        margin-top: 2rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        text-align: justify;
+    }
+
+    h2 {
+        margin-left: 2rem;
+        margin-top: 0.5rem;
+        font-size: 0.5rem;
+        padding: 10px;
+
+    }
+    
+    .first_title {
+        font-size:1.5rem; /* Χρήση vw για πιο ευέλικτο μέγεθος */
+        left: 2rem;
+        top: 17rem; /* Χρήση vh για προσαρμογή στο ύψος της οθόνης */
+    }
+    
+    #first_line {
+        top: 20rem;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+    }
+
+    .second_title {
+        font-size: 1.5rem;
+        left: 2rem;
+        top: 42rem;
+    }
+    
+    #second_line {
+        top: 44.5rem;
+        left: 50%;
+        transform: translate(-50%);
+        width: 90%;
+    }
+
+    .second_title1 {
+        font-size: 1.5rem;
+        left: 2rem;
+        top: 41rem;
+    }
+    
+    #second_line1 {
+        top: 43.5rem;
+        left: 50%;
+        transform: translate(-50%);
+        width: 90%;
+    }
+
+    .login-box {
+        width: 9rem;
+        top: 22rem;
+        left: 2rem;  
+    }
+
+    .register-box {
+        width: 9rem;
+        top: 22rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .t_c-box {
+        width: 9rem; /* Αύξηση του πλάτους για καλύτερη εφαρμογή */
+        top: 22rem; /* Μείωση του margin-top για πιο συμβατή τοποθέτηση */
+        right: 2rem;
+    }
+
+    .t_c-box1 {
+        width: 9rem;
+        top: 22rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    
+    .Partnership-box {
+        width: 9rem;
+        top: 32rem;
+        left: 2rem;
+    }
+
+    .Partnership-box1 {
+        width: 9rem;
+        top: 22rem;
+        right: 2rem;
+    }
+
+    .news-box {
+        width: 9rem;
+        top:32rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .news-box1 {
+        width: 9rem;
+        top: 22rem;
+        left: 2rem; 
+    }
+    
+    .contact-box {
+        width: 9rem;
+        top: 32rem;
+        right:2rem;
+    }
+    .contact-box1 {
+        width: 9rem;
+        top: 32rem;
+        left: 2rem;
+    }
+    .primary-box {
+        width: 9rem;
+        top:46rem;
+        left: 2rem;
+        z-index: 10;
+    }
+    .primary-box1 {
+        width: 9rem;
+        top:45rem;
+        left: 2rem;
+        z-index: 10;
+    }
+}
+@media only screen and (min-width: 1080px) and (max-width: 1366px) {
     .logo {
         margin-left: 4rem;
         margin-top: 4rem;
-        width: 500px;
-        height: 170px;
+        width: 1000px;
+        height: auto;
     }
 
     .dropdn {
@@ -1009,7 +1183,7 @@ h2 {
     }
 
     h2 {
-        margin-top: 3rem;
+        margin-top: 1rem;
         margin-left: 4rem;
         font-size: 1rem;
         background-color: rgb(245, 239, 172); /* Light gray background */
@@ -1282,4 +1456,723 @@ h2 {
     .primary-box1 .nav-link {
         font-size: 1rem; /* Μείωση του μεγέθους γραμματοσειράς για καλύτερη εφαρμογή */
     }
+}
+
+@media only screen and (min-width: 1367px) and (max-width: 1599px) {
+    .logo {
+        margin-left: 4rem;
+        margin-top: 4rem;
+        width: 500px;
+        height: auto;
+    }
+
+    .dropdn {
+        top: 17rem;
+        right:4rem;
+
+    }
+
+    .dropbutn {
+        font-size: 1rem;
+    }
+
+    .search-container {
+        position: absolute;
+        right: 5rem;
+        top: 7rem;
+        
+    }
+
+    .search-container input[type=text] {
+        padding: 0.5rem;
+        font-size: 1rem;
+        background-color: rgb(255, 255, 255);
+        border-radius: 0.25rem;
+    }
+
+    .search {
+        padding: 0.5rem;
+        font-size: 1rem;
+        background-color: rgb(255, 255, 255);
+        border-radius: 0.5rem;
+    }
+
+    .search:hover{
+        background-color: #BE96EB;
+    }
+
+    .first_title {
+        position: absolute;
+        font-size: 2rem;
+        font-family:'Times New Roman', Times, serif;
+        left: 4rem;
+        top: 24rem;
+    }
+
+    #first_line {
+        top: 28rem;
+        left: 4rem;
+        right: 4rem;
+        width: calc(100% - 8rem); /* 100% μείον τα 4rem δεξιά και αριστερά */
+    }
+
+    .second_title {
+        font-size: 2rem;
+        left: 4rem;
+        top: 60rem;
+    }
+
+    #second_line {
+        width: calc(100% - 8rem);
+        top: 64rem;
+        left: 4rem;
+    }
+
+    .second_title1 {
+        font-size: 2rem;
+        left: 4rem;
+        top: 64rem;
+    }
+
+    #second_line1 {
+        width: calc(100% - 8rem);
+        top: 68rem;
+        left: 4rem;
+    }
+
+    h2 {
+        margin-top: 1rem;
+        margin-left: 4rem;
+        font-size: 1rem;
+        background-color: rgb(245, 239, 172); /* Light gray background */
+        font-weight: bold; /* Bold text */
+        padding: 1rem; /* Add 10px space on all sides inside the background */
+        border-radius: 0.75rem;
+        border-style: solid;
+        border-color: #000000; /* Rounded corners */
+        display: inline-block;
+        /* Ensure the background only covers the text */
+    }
+
+    .success_messages .short-message {
+        display: none; /* Hide the short message by default */
+    }
+
+    .success_messages .full-message {
+        display: inline; /* Show the full message by default */
+    }
+
+    .login-box {
+        position:absolute;
+        padding: 10px;
+        border: 2px solid #8e8e8e;
+        width: 17rem; /* Αύξηση του πλάτους για καλύτερη εφαρμογή */
+        height: auto;
+        text-align: center;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        top: 30rem; /* Μείωση του margin-top για πιο συμβατή τοποθέτηση */
+        left: 4rem; /* Κεντράρισμα οριζόντια */ /* Κεντράρισμα οριζόντια */
+        
+    }
+
+    .login-box:hover img {
+        transform: scale(1); /* Zoom in to original size on hover */
+    }
+
+    .login-box .nav-link {
+        display: block;
+        margin-top: 10px; /* Μείωση του margin-top για μείωση του χώρου μεταξύ εικόνας και κειμένου */
+        text-align: center;
+        font-size: 1rem; /* Μείωση του μεγέθους γραμματοσειράς για καλύτερη εφαρμογή */
+        color: #333;
+        text-decoration: none;
+    }
+
+    .register-box {
+        position: absolute; /* Τοποθετείται σε σχέση με το body */
+        padding: 10px;
+        border: 2px solid #8e8e8e;
+        width: 17rem;
+        height: auto;
+        text-align: center;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        top:30rem; /* Σταθερή απόσταση από την κορυφή */
+        left: 50%;
+        transform: translateX(-50%);
+        
+    }
+
+    .register-box:hover img {
+        transform: scale(1); /* Zoom in to original size on hover */
+    }
+
+    .register-box .nav-link {
+        display: block;
+        margin-top: 10px; /* Μείωση του margin-top για μείωση του χώρου μεταξύ εικόνας και κειμένου */
+        text-align: center;
+        font-size: 1rem; /* Μείωση του μεγέθους γραμματοσειράς για καλύτερη εφαρμογή */
+        color: #333;
+        text-decoration: none;
+    }
+
+    .t_c-box {
+        position:absolute;
+        padding: 10px;
+        border: 2px solid #8e8e8e;
+        width: 17rem; /* Αύξηση του πλάτους για καλύτερη εφαρμογή */
+        height: auto;
+        text-align: center;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        top: 30rem; /* Μείωση του margin-top για πιο συμβατή τοποθέτηση */
+        right: 4rem;
+        transform: translate(0); /* Κεντράρισμα οριζόντια */ /* Κεντράρισμα οριζόντια */
+    }
+
+    .t_c-box .nav-link {
+        display: block;
+        margin-top: 10px; /* Μείωση του margin-top για μείωση του χώρου μεταξύ εικόνας και κειμένου */
+        text-align: center;
+        font-size: 1rem; /* Μείωση του μεγέθους γραμματοσειράς για καλύτερη εφαρμογή */
+        color: #333;
+        text-decoration: none;
+    }
+
+    .Partnership-box {
+        position:absolute;
+        padding: 10px;
+        border: 2px solid #8e8e8e;
+        width: 17rem;
+        height: auto;
+        text-align: center;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        top: 45rem;
+        left: 4rem;
+    }
+
+    .Partnership-box .nav-link{
+        display: block;
+        margin-top: 10px;
+        text-align: center;
+        font-size: 1rem;
+        color: #333;
+        text-decoration: none;
+    }
+
+    .news-box {
+        position: absolute; /* Τοποθετείται σε σχέση με το body */
+        padding: 10px;
+        border: 2px solid #8e8e8e;
+        width: 17rem;
+        height: auto;
+        text-align: center;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        top:45rem; /* Σταθερή απόσταση από την κορυφή */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .news-box .nav-link {
+        display: block;
+        margin-top: 10px; /* Μείωση του margin-top για μείωση του χώρου μεταξύ εικόνας και κειμένου */
+        text-align: center;
+        font-size: 1rem; /* Μείωση του μεγέθους γραμματοσειράς για καλύτερη εφαρμογή */
+        color: #333;
+        text-decoration: none;
+    }
+
+    .contact-box {
+        position:absolute;
+        padding: 10px;
+        border: 2px solid #8e8e8e;
+        width: 17rem; /* Αύξηση του πλάτους για καλύτερη εφαρμογή */
+        height: auto;
+        text-align: center;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        top: 45rem; /* Μείωση του margin-top για πιο συμβατή τοποθέτηση */
+        right: 4rem;
+        transform: translate(0);
+    }
+
+    .contact-box .nav-link {
+        display: block;
+        margin-top: 10px; /* Μείωση του margin-top για μείωση του χώρου μεταξύ εικόνας και κειμένου */
+        text-align: center;
+        font-size: 1rem; /* Μείωση του μεγέθους γραμματοσειράς για καλύτερη εφαρμογή */
+        color: #333;
+        text-decoration: none;
+    }
+
+    .primary-box {
+        position:absolute;
+        padding: 10px;
+        border: 2px solid #ccc;
+        width: 17rem; /* Αύξηση του πλάτους για καλύτερη εφαρμογή */
+        height: auto;
+        text-align: center;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        top:66rem; /* Μείωση του margin-top για πιο συμβατή τοποθέτηση */
+        left: 4rem;
+    }
+
+    .primary-box .nav-link {
+        font-size: 1rem; /* Μείωση του μεγέθους γραμματοσειράς για καλύτερη εφαρμογή */
+    }
+
+    .dropbtn_primary {
+        font-size: 1rem;
+    }
+
+    .t_c-box1 {
+        position: absolute; /* Τοποθετείται σε σχέση με το body */
+        padding: 10px;
+        border: 2px solid #8e8e8e;
+        width: 17rem;
+        height: auto;
+        text-align: center;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        top:31rem; /* Σταθερή απόσταση από την κορυφή */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .t_c-box1 .nav-link {
+        font-size: 1rem;
+    }
+
+    .news-box1 {
+        position:absolute;
+        padding: 10px;
+        border: 2px solid #8e8e8e;
+        width: 17rem;
+        height: auto;
+        text-align: center;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        top: 31rem;
+        left: 4rem;
+    }
+
+    .news-box1 .nav-link {
+        font-size: 1rem;
+    }
+
+    .Partnership-box1 {
+        position:absolute;
+        padding: 10px;
+        border: 2px solid #8e8e8e;
+        width: 17rem; /* Αύξηση του πλάτους για καλύτερη εφαρμογή */
+        height: auto;
+        text-align: center;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        top: 31rem; /* Μείωση του margin-top για πιο συμβατή τοποθέτηση */
+        right: 4rem;
+        transform: translate(0);
+    }
+
+    .Partnership-box1 .nav-link{
+        font-size: 1rem; /* Μείωση του μεγέθους γραμματοσειράς για καλύτερη εφαρμογή */
+    }
+
+    .contact-box1 {
+        position:absolute;
+        padding: 10px;
+        border: 2px solid #8e8e8e;
+        width: 17rem;
+        height: auto;
+        text-align: center;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        top: 48rem;
+        left: 4rem;
+    }
+
+    .contact-box1 .nav-link {
+        font-size: 1rem;
+    }
+    .primary-box1 {
+        position:absolute;
+        padding: 10px;
+        border: 2px solid #ccc;
+        width: 17rem; /* Αύξηση του πλάτους για καλύτερη εφαρμογή */
+        height: auto;
+        text-align: center;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        top:70rem; /* Μείωση του margin-top για πιο συμβατή τοποθέτηση */
+        left: 4rem;
+    }
+
+    .primary-box1 .nav-link {
+        font-size: 1rem; /* Μείωση του μεγέθους γραμματοσειράς για καλύτερη εφαρμογή */
+    }
+
+}
+
+@media only screen and (min-width: 1600px) and (max-width: 1920px) {
+    .logo {
+        margin-left: 4rem;
+        margin-top: 4rem;
+        width: 700px;
+        height: auto;
+    }
+
+    .dropdn {
+        top: 13rem;
+        right:4rem;
+
+    }
+
+    .dropbutn {
+        padding: 1.5rem;
+        font-size: 1.5rem;
+    }
+    .dropdn-content {
+        font-size: 1rem;
+    }
+    .search-container {
+        right: 12rem;
+        top: 7rem;
+    }
+    .search-container input[type=text] {
+        padding: 0.5rem;
+        font-size: 1rem;
+        background-color: rgb(255, 255, 255);
+        border-radius: 0.25rem;
+        width: auto;
+    }
+
+    .search {
+        padding: 0.5rem;
+        font-size: 1rem;
+        background-color: rgb(255, 255, 255);
+        border-radius: 0.5rem;
+    }
+
+    .search:hover{
+        background-color: #BE96EB;
+    }
+
+    .first_title {
+        position: absolute;
+        font-size: 2rem;
+        font-family:'Times New Roman', Times, serif;
+        left: 4rem;
+        top: 24rem;
+    }
+
+    #first_line {
+        top: 28rem;
+        left: 4rem;
+        right: 4rem;
+        width: calc(100% - 8rem); /* 100% μείον τα 4rem δεξιά και αριστερά */
+    }
+
+    .second_title {
+        font-size: 2rem;
+        left: 4rem;
+        top: 72rem;
+    }
+
+    #second_line {
+        width: calc(100% - 8rem);
+        top: 76rem;
+        left: 4rem;
+    }
+
+    .second_title1 {
+        font-size: 2rem;
+        left: 4rem;
+        top: 77rem;
+    }
+
+    #second_line1 {
+        width: calc(100% - 8rem);
+        top: 82rem;
+        left: 4rem;
+    }
+
+    h2 {
+        margin-top: 1rem;
+        margin-left: 4rem;
+        font-size: 1rem;
+        background-color: rgb(245, 239, 172); /* Light gray background */
+        font-weight: bold; /* Bold text */
+        padding: 1rem; /* Add 10px space on all sides inside the background */
+        border-radius: 0.75rem;
+        border-style: solid;
+        border-color: #000000; /* Rounded corners */
+        display: inline-block;
+        /* Ensure the background only covers the text */
+    }
+
+    .success_messages .short-message {
+        display: none; /* Hide the short message by default */
+    }
+
+    .success_messages .full-message {
+        display: inline; /* Show the full message by default */
+    }
+
+    .login-box {
+        position:absolute;
+        padding: 10px;
+        border: 2px solid #8e8e8e;
+        width: 24rem; /* Αύξηση του πλάτους για καλύτερη εφαρμογή */
+        height: auto;
+        text-align: center;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        top: 32rem; /* Μείωση του margin-top για πιο συμβατή τοποθέτηση */
+        left: 4rem; /* Κεντράρισμα οριζόντια */ /* Κεντράρισμα οριζόντια */
+        
+    }
+
+    .login-box:hover img {
+        transform: scale(1); /* Zoom in to original size on hover */
+    }
+
+    .login-box .nav-link {
+        display: block;
+        margin-top: 10px; /* Μείωση του margin-top για μείωση του χώρου μεταξύ εικόνας και κειμένου */
+        text-align: center;
+        font-size: 1rem; /* Μείωση του μεγέθους γραμματοσειράς για καλύτερη εφαρμογή */
+        color: #333;
+        text-decoration: none;
+    }
+
+    .register-box {
+        position: absolute; /* Τοποθετείται σε σχέση με το body */
+        padding: 10px;
+        border: 2px solid #8e8e8e;
+        width: 24rem;
+        height: auto;
+        text-align: center;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        top:32rem; /* Σταθερή απόσταση από την κορυφή */
+        left: 50%;
+        transform: translateX(-50%);
+        
+    }
+
+    .register-box:hover img {
+        transform: scale(1); /* Zoom in to original size on hover */
+    }
+
+    .register-box .nav-link {
+        display: block;
+        margin-top: 10px; /* Μείωση του margin-top για μείωση του χώρου μεταξύ εικόνας και κειμένου */
+        text-align: center;
+        font-size: 1rem; /* Μείωση του μεγέθους γραμματοσειράς για καλύτερη εφαρμογή */
+        color: #333;
+        text-decoration: none;
+    }
+
+    .t_c-box {
+        position:absolute;
+        padding: 10px;
+        border: 2px solid #8e8e8e;
+        width: 24rem; /* Αύξηση του πλάτους για καλύτερη εφαρμογή */
+        height: auto;
+        text-align: center;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        top: 32rem; /* Μείωση του margin-top για πιο συμβατή τοποθέτηση */
+        right: 4rem;
+        transform: translate(0); /* Κεντράρισμα οριζόντια */ /* Κεντράρισμα οριζόντια */
+    }
+
+    .t_c-box .nav-link {
+        display: block;
+        margin-top: 10px; /* Μείωση του margin-top για μείωση του χώρου μεταξύ εικόνας και κειμένου */
+        text-align: center;
+        font-size: 1rem; /* Μείωση του μεγέθους γραμματοσειράς για καλύτερη εφαρμογή */
+        color: #333;
+        text-decoration: none;
+    }
+
+    .Partnership-box {
+        position:absolute;
+        padding: 10px;
+        border: 2px solid #8e8e8e;
+        width: 24rem;
+        height: auto;
+        text-align: center;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        top: 52rem;
+        left: 4rem;
+    }
+
+    .Partnership-box .nav-link{
+        display: block;
+        margin-top: 10px;
+        text-align: center;
+        font-size: 1rem;
+        color: #333;
+        text-decoration: none;
+    }
+
+    .news-box {
+        position: absolute; /* Τοποθετείται σε σχέση με το body */
+        padding: 10px;
+        border: 2px solid #8e8e8e;
+        width: 24rem;
+        height: auto;
+        text-align: center;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        top:52rem; /* Σταθερή απόσταση από την κορυφή */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .news-box .nav-link {
+        display: block;
+        margin-top: 10px; /* Μείωση του margin-top για μείωση του χώρου μεταξύ εικόνας και κειμένου */
+        text-align: center;
+        font-size: 1rem; /* Μείωση του μεγέθους γραμματοσειράς για καλύτερη εφαρμογή */
+        color: #333;
+        text-decoration: none;
+    }
+
+    .contact-box {
+        position:absolute;
+        padding: 10px;
+        border: 2px solid #8e8e8e;
+        width: 24rem; /* Αύξηση του πλάτους για καλύτερη εφαρμογή */
+        height: auto;
+        text-align: center;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        top: 52rem; /* Μείωση του margin-top για πιο συμβατή τοποθέτηση */
+        right: 4rem;
+        transform: translate(0);
+    }
+
+    .contact-box .nav-link {
+        display: block;
+        margin-top: 10px; /* Μείωση του margin-top για μείωση του χώρου μεταξύ εικόνας και κειμένου */
+        text-align: center;
+        font-size: 1rem; /* Μείωση του μεγέθους γραμματοσειράς για καλύτερη εφαρμογή */
+        color: #333;
+        text-decoration: none;
+    }
+
+    .primary-box {
+        position:absolute;
+        padding: 10px;
+        border: 2px solid #ccc;
+        width: 24rem; /* Αύξηση του πλάτους για καλύτερη εφαρμογή */
+        height: auto;
+        text-align: center;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        top:80rem; /* Μείωση του margin-top για πιο συμβατή τοποθέτηση */
+        left: 4rem;
+    }
+
+    .primary-box .nav-link {
+        font-size: 1rem; /* Μείωση του μεγέθους γραμματοσειράς για καλύτερη εφαρμογή */
+    }
+
+    .dropbtn_primary {
+        font-size: 1rem;
+    }
+
+    .t_c-box1 {
+        position: absolute; /* Τοποθετείται σε σχέση με το body */
+        padding: 10px;
+        border: 2px solid #8e8e8e;
+        width: 24rem;
+        height: auto;
+        text-align: center;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        top:32rem; /* Σταθερή απόσταση από την κορυφή */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .t_c-box1 .nav-link {
+        font-size: 1rem;
+    }
+
+    .news-box1 {
+        position:absolute;
+        padding: 10px;
+        border: 2px solid #8e8e8e;
+        width: 24rem;
+        height: auto;
+        text-align: center;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        top: 32rem;
+        left: 4rem;
+    }
+
+    .news-box1 .nav-link {
+        font-size: 1rem;
+    }
+
+    .Partnership-box1 {
+        position:absolute;
+        padding: 10px;
+        border: 2px solid #8e8e8e;
+        width: 24rem; /* Αύξηση του πλάτους για καλύτερη εφαρμογή */
+        height: auto;
+        text-align: center;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        top: 32rem; /* Μείωση του margin-top για πιο συμβατή τοποθέτηση */
+        right: 4rem;
+        transform: translate(0);
+    }
+
+    .Partnership-box1 .nav-link{
+        font-size: 1rem; /* Μείωση του μεγέθους γραμματοσειράς για καλύτερη εφαρμογή */
+    }
+
+    .contact-box1 {
+        position:absolute;
+        padding: 10px;
+        border: 2px solid #8e8e8e;
+        width: 24rem;
+        height: auto;
+        text-align: center;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        top: 54rem;
+        left: 4rem;
+    }
+
+    .contact-box1 .nav-link {
+        font-size: 1rem;
+    }
+    .primary-box1 {
+        position:absolute;
+        padding: 10px;
+        border: 2px solid #ccc;
+        width: 24rem; /* Αύξηση του πλάτους για καλύτερη εφαρμογή */
+        height: auto;
+        text-align: center;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        top:85rem; /* Μείωση του margin-top για πιο συμβατή τοποθέτηση */
+        left: 4rem;
+    }
+
+    .primary-box1 .nav-link {
+        font-size: 1rem; /* Μείωση του μεγέθους γραμματοσειράς για καλύτερη εφαρμογή */
+    }
+
 }

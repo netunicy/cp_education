@@ -1519,12 +1519,12 @@ h2 {
     .second_title {
         font-size: 2rem;
         left: 4rem;
-        top: 60rem;
+        top: 64rem;
     }
 
     #second_line {
         width: calc(100% - 8rem);
-        top: 64rem;
+        top: 68rem;
         left: 4rem;
     }
 
@@ -1571,7 +1571,7 @@ h2 {
         text-align: center;
         border-radius: 5px;
         background-color: #f9f9f9;
-        top: 30rem; /* Μείωση του margin-top για πιο συμβατή τοποθέτηση */
+        top: 31rem; /* Μείωση του margin-top για πιο συμβατή τοποθέτηση */
         left: 4rem; /* Κεντράρισμα οριζόντια */ /* Κεντράρισμα οριζόντια */
         
     }
@@ -1598,7 +1598,7 @@ h2 {
         text-align: center;
         border-radius: 5px;
         background-color: #f9f9f9;
-        top:30rem; /* Σταθερή απόσταση από την κορυφή */
+        top:31rem; /* Σταθερή απόσταση από την κορυφή */
         left: 50%;
         transform: translateX(-50%);
         
@@ -1626,7 +1626,7 @@ h2 {
         text-align: center;
         border-radius: 5px;
         background-color: #f9f9f9;
-        top: 30rem; /* Μείωση του margin-top για πιο συμβατή τοποθέτηση */
+        top: 31rem; /* Μείωση του margin-top για πιο συμβατή τοποθέτηση */
         right: 4rem;
         transform: translate(0); /* Κεντράρισμα οριζόντια */ /* Κεντράρισμα οριζόντια */
     }
@@ -1649,7 +1649,7 @@ h2 {
         text-align: center;
         border-radius: 5px;
         background-color: #f9f9f9;
-        top: 45rem;
+        top: 48rem;
         left: 4rem;
     }
 
@@ -1671,7 +1671,7 @@ h2 {
         text-align: center;
         border-radius: 5px;
         background-color: #f9f9f9;
-        top:45rem; /* Σταθερή απόσταση από την κορυφή */
+        top:48rem; /* Σταθερή απόσταση από την κορυφή */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -1694,7 +1694,7 @@ h2 {
         text-align: center;
         border-radius: 5px;
         background-color: #f9f9f9;
-        top: 45rem; /* Μείωση του margin-top για πιο συμβατή τοποθέτηση */
+        top: 48rem; /* Μείωση του margin-top για πιο συμβατή τοποθέτηση */
         right: 4rem;
         transform: translate(0);
     }
@@ -1717,7 +1717,7 @@ h2 {
         text-align: center;
         border-radius: 5px;
         background-color: #f9f9f9;
-        top:66rem; /* Μείωση του margin-top για πιο συμβατή τοποθέτηση */
+        top:70rem; /* Μείωση του margin-top για πιο συμβατή τοποθέτηση */
         left: 4rem;
     }
 

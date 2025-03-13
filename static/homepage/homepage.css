@@ -851,11 +851,11 @@ h2 {
     .second_title1 {
         font-size: 1.5rem;
         left: 2rem;
-        top: 41rem;
+        top: 43rem;
     }
     
     #second_line1 {
-        top: 43.5rem;
+        top: 45.5rem;
         left: 50%;
         transform: translate(-50%);
         width: 90%;
@@ -931,7 +931,7 @@ h2 {
     }
     .primary-box1 {
         width: 9rem;
-        top:46rem;
+        top:48rem;
         left: 3rem;
         z-index: 10;
     }

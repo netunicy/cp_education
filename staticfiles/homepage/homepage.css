@@ -933,7 +933,7 @@ h2 {
         z-index: 10;
     }
 }
-
+/* s8+ */
 @media only screen and (max-width: 740px) and (max-height: 412px) and (orientation: landscape) {
     
     .logo {

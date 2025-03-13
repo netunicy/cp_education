@@ -575,7 +575,7 @@ h2 {
     .dropdn {
         position: relative;
         top: 6rem;
-        right: 5%;
+        right: 10%;
         transform: translate(35%);
         z-index: 10; /* Φέρνει το στοιχείο μπροστά από τα υπόλοιπα */
     }

@@ -13,6 +13,9 @@ html, body {
     margin-top: 4rem;
 }
 #note {
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
     margin-left: 5rem;
     margin-right: 5rem;
 }

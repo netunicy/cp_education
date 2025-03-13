@@ -100,10 +100,11 @@ h1 {
         margin-top: 1rem;
     }
     .button {
-        padding: 6px 6px;
-        font-size: 18px;
+        padding: 5px;
+        font-size: 16px;
         right: 2rem;
-        top:7rem;
+        top:9rem;
+        border-radius: 5px;
     }
     
     #author {
@@ -112,16 +113,17 @@ h1 {
     }
     
     .article {
-        margin-left: 0px;
-        margin-right: 0px;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
         text-align: left;
     }
     
     .button1 {
-        padding: 6px 8px;
-        font-size: 18px;
+        padding: 5px;
+        font-size: 16px;
         right: 2rem;
-        top: 4rem;
+        top: 6rem;
+        border-radius: 5px;
     }
     
     .media {
@@ -138,33 +140,112 @@ h1 {
         text-align:center;
     }
     .button {
-        padding: 8px 16px;
+        padding: 5px;
         font-size: 18px;
-        right: 10px;
-        top: 150px;
+        right: 1rem;
+        top: 9rem;
+        border-radius: 5px;
     }
     
     #author {
         font-size: 18px;
-        margin-left: 5px;
+        margin-left: 1rem;
     }
     
     .article {
-        margin-left: 0px;
-        margin-right: 0px;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
         text-align: left;
     }
     
     .button1 {
-        padding: 8px 16px;
+        padding: 5px;
         font-size: 18px;
-        right: 10px;
-        top: 100px;
+        right: 1rem;
+        top: 6rem;
+        border-radius: 5px;
     }
     
     .media {
         margin-top: 50px;
         width: 300px;
+        height: auto;
+    }
+}
+@media only screen and (min-width: 1367px) and (max-width: 1599px) {
+    h1 {
+        font-size: 25px;
+        text-align:center;
+    }
+    .button {
+        padding: 5px;
+        font-size: 20px;
+        right: 2rem;
+        top: 9rem;
+        border-radius: 5px;
+    }
+    
+    #author {
+        font-size: 20px;
+        margin-left: 2rem;
+    }
+    
+    .article {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        text-align: left;
+    }
+    
+    .button1 {
+        padding: 5px;
+        font-size: 18px;
+        right: 2rem;
+        top: 6rem;
+        border-radius: 5px;
+    }
+    
+    .media {
+        margin-top: 50px;
+        width: 400px;
+        height: auto;
+    }
+}
+@media only screen and (min-width: 1600px) and (max-width: 1920px) {
+    h1 {
+        font-size: 35px;
+        text-align:center;
+        margin-top: 1rem;
+    }
+    .button {
+        padding: 7px;
+        font-size: 20px;
+        right: 4rem;
+        top: 9rem;
+        border-radius: 5px;
+    }
+    
+    #author {
+        font-size: 25px;
+        margin-left: 4rem;
+    }
+    
+    .article {
+        margin-left: 2rem;
+        margin-right: 2rem;
+        text-align: left;
+    }
+    
+    .button1 {
+        padding: 7px;
+        font-size: 20px;
+        right: 4rem;
+        top: 6rem;
+        border-radius: 5px;
+    }
+    
+    .media {
+        margin-top: 50px;
+        width: 450px;
         height: auto;
     }
 }

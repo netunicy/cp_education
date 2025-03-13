@@ -40,7 +40,7 @@ input, textarea {
     padding: 10px 13px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 18px;
     box-sizing: border-box;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -135,10 +135,17 @@ form#contact img {
 
 }
 
-/* Responsive Design */
-@media only screen and (max-width: 500px) and (min-width: 280px) {
+
+@media only screen and (max-width: 768px) and (orientation: portrait) {
+    .logo {
+        top: 2rem;
+        left: 2rem;
+        width: 250px;
+        height: auto;
+    }
     .container {
         padding: 15px 20px;
+        margin-top: 5rem;
     }
 
     h3 {
@@ -146,15 +153,22 @@ form#contact img {
     }
     .button3 {
         padding: 6px 8px; /* Αύξηση padding για καλύτερη εμφάνιση */
-        top: 1%;
+        top: 2rem;
         left: 70%;
         font-size: 13px;
     }
 }
 
-@media only screen and (max-width: 1000px) and (min-width: 501px) {
+@media only screen and (max-width: 1024px) and (max-height: 600px) and (orientation: landscape) {
+    .logo {
+        top: 2rem;
+        left: 2rem;
+        width: 300px;
+        height: auto;
+    }
     .container {
         padding: 15px 20px;
+        margin-top: 3rem;
     }
 
     h3 {
@@ -162,9 +176,54 @@ form#contact img {
     }
     .button3 {
         padding: 10px 12px; /* Αύξηση padding για καλύτερη εμφάνιση */
-        top: 30%;
-        left: 74%;
+        top: 3rem;
+        left: 80%;
         font-size: 13px;
     }
 
+}
+
+@media only screen and (min-width: 1367px) and (max-width: 1599px) {
+    .logo {
+        top: 4rem;
+        left: 4rem;
+        width: 400px;
+        height: auto;
+    }
+    .container {
+        top: 5rem;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+    .button3 {
+        padding: 10px; /* Αύξηση padding για καλύτερη εμφάνιση */
+        top: 7rem;
+        left: 80%;
+        font-size: 20px;
+    }
+}
+@media only screen and (min-width: 1600px) and (max-width: 1920px) {
+    .logo {
+        top: 5rem;
+        left: 5rem;
+        width: 500px;
+        height: auto;
+    } 
+    .container {
+        top: 5rem;
+        width:50%;
+        height: auto;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+    .button3 {
+        padding: 14px; /* Αύξηση padding για καλύτερη εμφάνιση */
+        top: 10rem;
+        left: 80%;
+        font-size: 20px;
+    }
 }

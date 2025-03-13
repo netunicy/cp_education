@@ -74,8 +74,7 @@ img {
     background-color: #ffffff;
 }
 
-
-@media only screen and (max-width: 500px) and (min-width: 280px) {
+@media only screen and (max-width: 768px) and (orientation: portrait) {
     .textt_c{
         margin-left: 2vw;
         margin-right: 2vw;
@@ -83,28 +82,24 @@ img {
     }
     .button1 {
         font-size: 16px;
-        padding: 8px 14px;
-        top:25vh;
-        right: 5vh;
-        border-radius: 8px;
+        padding: 8px;
+        margin-top:10rem;
+        margin-right: 2rem;
+        border-radius: 5px;
     }
     .button2 {
         position: relative;
         font-size: 16px;
-        border-radius: 8px;
-        padding: 8px 14px;
-        right: 5vw;
-        top:2vh;
-        bottom: 10vh;
-
+        border-radius: 5px;
+        padding: 8px;
+        margin-right: 2rem;
+        margin-top:2rem;
+        margin-bottom: 1rem;
     }
     .button3 {
-        position: relative;
         font-size: 16px;
-        border-radius: 8px;
-        right: 5vw;
-        margin-top: 3vh;
-        padding: 6px 16px;
+        margin-right: 2rem;
+        border-radius: 5px;
     }
     #img {
         width: 85%;
@@ -112,19 +107,108 @@ img {
     }
 }
 
-@media only screen and (max-width: 1000px) and (min-width: 501px) {
+@media only screen and (max-width: 1024px) and (max-height: 600px) and (orientation: landscape) {
     .textt_c{
         margin-left: 25px;
         margin-right: 25px;
         margin-top: 80px;
     }
     .button1 {
-        top:200px;
-        right: 50px;
+        margin-top:10rem;
+        right: 4rem;
+        padding: 8px;
+        border-radius: 5px;
     }
     .button2 {
-        right: 50px;
-        top:2200px;
+        position: relative;
+        margin-right: 4rem;
+        margin-top:4rem;
+        margin-bottom: 1rem;
+        padding: 8px;
+        border-radius: 5px;
 
+    }
+    .button3 {
+        margin-right: 4rem;
+        margin-top:1rem;
+        margin-bottom: 5rem;
+        padding: 8px;
+        border-radius: 5px;
+    }
+}
+
+@media only screen and (min-width: 1367px) and (max-width: 1599px) {
+    .textt_c{
+        margin-top: 8rem;
+        margin-bottom: 5rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+    
+    img {
+        margin-top: 2rem;
+        margin-left: 2rem;
+    }
+    
+    .button1 {
+        border-radius: 5px;
+        right: 2rem;
+        top: 10rem;
+    }
+    
+    .button2 {
+        position: relative;
+        border-radius: 5px;
+        margin-right: 2rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+    .button3 {
+        margin-right: 2rem;
+        margin-top: 1rem;
+        border-radius: 5px;
+        margin-bottom: 5rem;
+    }
+    
+}
+@media only screen and (min-width: 1600px) and (max-width: 1920px) {
+    .textt_c{
+        margin-top: 10rem;
+        margin-bottom: 5rem;
+        margin-left: 4rem;
+        margin-right: 4rem;
+    }
+    
+    img {
+        width: 550px;
+        height: auto;
+        margin-top: 5rem;
+        margin-left: 5rem;
+    }
+    
+    .button1 {
+        font-size: 25px;
+        padding: 10px;
+        border-radius: 5px;
+        right: 4rem;
+        top: 10rem;
+    }
+    
+    .button2 {
+        padding: 10px;
+        font-size: 25px;
+        position: relative;
+        border-radius: 5px;
+        margin-right: 4rem;
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+    }
+    .button3 {
+        padding: 10px;
+        font-size: 25px;
+        margin-right: 4rem;
+        margin-top: 1rem;
+        border-radius: 5px;
+        margin-bottom: 5rem;
     }
 }

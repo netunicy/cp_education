@@ -63,9 +63,11 @@ h1 {
     margin-top: 0px;
     margin-left: 50px;
     margin-right: 50px;
+    width: 100px;
+    height: auto;
 }
 
-@media only screen and (max-width: 500px) and (min-width:265px) {
+@media only screen and (max-width: 768px) and (orientation: portrait) {
     h1 {
         font-size: 25px;
         margin-bottom: 70px;
@@ -93,7 +95,7 @@ h1 {
     }
 }
 
-@media only screen and (max-width: 1000px) and (min-width: 501px) {
+@media only screen and (max-width: 1024px) and (max-height: 600px) and (orientation: landscape) {
     h1 {
         font-size: 30px;
         margin-bottom: 70px;

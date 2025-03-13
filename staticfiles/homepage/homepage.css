@@ -774,8 +774,6 @@ h2 {
 
 /* other mobile devices landscape */
 @media only screen and (max-width: 1024px) and (max-height: 600px) and (orientation: landscape) {
-
-    
     .logo {
         width: 350px;
         height: auto;
@@ -853,11 +851,11 @@ h2 {
     .second_title1 {
         font-size: 1.5rem;
         left: 2rem;
-        top: 45rem;
+        top: 41rem;
     }
     
     #second_line1 {
-        top: 47.5rem;
+        top: 43.5rem;
         left: 50%;
         transform: translate(-50%);
         width: 90%;
@@ -933,7 +931,7 @@ h2 {
     }
     .primary-box1 {
         width: 9rem;
-        top:50rem;
+        top:46rem;
         left: 3rem;
         z-index: 10;
     }

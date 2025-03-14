@@ -104,7 +104,7 @@ option {
     background-color: #BE96EB;
 }
 
-#content {
+#content p {
     font-weight: bold;
     color: #000000;
     text-decoration: underline;
@@ -124,50 +124,59 @@ option {
 .top-link:hover {
     background-color: #0056b3;
 }
-@media only screen and (max-width: 768px) and (max-height: 1024px) and (orientation: portrait) {
+@media only screen and (max-width: 768px) and (orientation: portrait) {
     h1 {
         margin-top: 3vh;
-        font-size: 25px;
+        font-size: 20px;
         padding: 6px 12px;
     }
     .button1 {
         font-size: 18px;
         padding: 5px 6px;
         right: 2rem;
-        top: 10rem;
+        top: 9rem;
     }
     .button {
         font-size: 18px;
         padding: 5px 6px;
         right: 6rem;
-        top: 10rem;
+        top: 9rem;
     }
     .button_chapter {
         font-size: 18px;
         padding: 5px 6px;
         right: 2rem;
-        top: 7rem;
+        top: 6rem;
     }
     .select_value {
         font-size: 18px;
         padding: 5px 6px;
         max-width: 50%;
         right: 7.8rem;
-        top: 7rem;
+        top: 6rem;
     }
     .text {
-        font-size: 16px;
         margin-top: 10rem;
-        margin-left: 2rem;
+        margin-left: 0.5rem;
+        margin-bottom: 5rem;
     }
-
+    
     .top-link {
         padding: 6px 12px;
         font-size: 18px;
+        right: 2rem;
+        bottom: 2rem;
+        margin-top: 20rem;
+    }
+    #content {
+        font-size: 25px;
+        font-weight: bold;
+        color: rgb(0, 0, 0);
+        text-decoration: underline;
     }
 }
 
-@media only screen and (orientation: landscape) and (max-width: 1000px) {
+@media only screen and (max-width: 1024px) and (max-height: 600px) and (orientation: landscape) {
     h1 {
         font-size: 25px;
         margin-left: 10px;
@@ -209,10 +218,85 @@ option {
         margin-top: 35vh;
     }
     .top-link {
-        padding: 8px 16px;
+        padding: 6px 12px;
+        font-size: 20px;
+        right: 2rem;
+        bottom: 2rem;
+        margin-top: 20rem;
+    }
+    #content {
+        font-size: 25px;
+        font-weight: bold;
+        color: rgb(0, 0, 0);
+        text-decoration: underline;
     }
 } 
-@media only screen and (min-width: 1920px) {
+
+@media only screen and (min-width: 1367px) and (max-width: 1599px) {
+    h1 {
+        font-size: 30px;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 2rem;
+        padding: 10px;
+    }
+    .button1 {
+        font-size: 20px;
+        padding: 10px 12px;
+        right:5rem;
+        border-radius: 8px;
+        top: 13rem;
+    }
+    .button {
+        font-size: 20px;
+        padding: 10px 12px;
+        border-radius: 8px;
+        right: 10rem;
+        top: 13rem;
+    }
+    .button_chapter {
+        font-size:20px;
+        border-radius: 8px;
+        padding: 10px 12px;
+        right: 5rem;
+        top: 9rem;
+    }
+    .select_value {
+        width:20%;
+        font-size: 20px;
+        border-radius: 8px;
+        padding: 10px 12px;
+        right: 12rem;
+        top: 9rem;
+    }
+    option {
+        font-size: 20px;
+    }
+    .text {
+        margin-left: 5rem;
+        margin-top: 12rem;
+    }
+    .text1 {
+        font-size: 30px;
+    }
+    .top-link {
+        padding: 10px;
+        font-size: 20px;
+    }
+    #downbook {
+        font-size: 25px;
+    }
+    #content {
+        font-size: 30px;
+        font-weight: bold;
+        color: rgb(0, 0, 0);
+        text-decoration: underline;
+    }
+    
+
+}
+
+@media only screen and (min-width: 1600px) and (max-width: 1920px) {
     h1 {
         font-size: 40px;
         margin-left: 10px;
@@ -269,6 +353,4 @@ option {
     #content {
         font-size: 30px;
     }
-    
-
 }

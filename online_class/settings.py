@@ -8,7 +8,7 @@ import dj_database_url
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-DEBUG = True
+DEBUG = False
 
 #with open(os.path.join(BASE_DIR,'secret_key.txt')) as f:
     #SECRET_KEY = f.read().strip()
@@ -138,16 +138,16 @@ CAPTCHA_IMAGE_SIZE = (200, 50)  # Διαστάσεις εικόνας
 CAPTCHA_FONT_SIZE = 36  # Μέγεθος γραμματοσειράς
 CAPTCHA_TIMEOUT = 5  # Διάρκεια ισχύος CAPTCHA σε λεπτά
 
-#SESSION_COOKIE_SECURE = True
-#CSRF_COOKIE_SECURE = True
-#SECURE_SSL_REDIRECT = True
-#SECURE_HSTS_SECONDS= 31536000
-#SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-#SECURE_HSTS_PRELOAD = True
-#SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-#SESSION_EXPIRE_AT_BROWSER_CLOSE = True
-#SESSION_COOKIE_AGE = 1800  # 30 minutes (in seconds)
-#SESSION_SAVE_EVERY_REQUEST = True  # Refresh session expiration on every request
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True
+SECURE_HSTS_SECONDS= 31536000
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+SESSION_COOKIE_AGE = 1800  # 30 minutes (in seconds)
+SESSION_SAVE_EVERY_REQUEST = True  # Refresh session expiration on every request
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

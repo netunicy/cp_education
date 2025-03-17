@@ -96,7 +96,7 @@ option {
     border-radius: 8px;
     padding: 10px 16px;
     position: absolute;
-    right: 16.5rem;
+    right: 17rem;
     top: 7rem;
 }
 
@@ -152,12 +152,13 @@ option {
         font-size: 18px;
         padding: 5px 6px;
         max-width: 50%;
-        right: 7.8rem;
+        right: 8rem;
         top: 6rem;
     }
     .text {
         margin-top: 10rem;
         margin-left: 0.5rem;
+        margin-right: 0.5rem;
         margin-bottom: 5rem;
     }
     
@@ -274,6 +275,7 @@ option {
     }
     .text {
         margin-left: 5rem;
+        margin-right: 5rem;
         margin-top: 12rem;
     }
     .text1 {

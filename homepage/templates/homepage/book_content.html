@@ -32,8 +32,13 @@
             <button class='button_chapter' type="submit">Προβολή</button>
             
         </form>
+        
         <div class="text">
-            <a id="downbook" href="{{ x.book }}" target="_blank">Κατέβασε το αρχείο σε pdf</a>
+            {% for j in data %}
+                {% if j.book %}
+                    <a id="downbook" href="{{ j.book }}" target="_blank">Κατέβασε το αρχείο σε pdf</a>
+                {% endif %}
+            {% endfor %}
             <p id='content'>Περιεχόμενα</p>
             <p class="text1">{{ x.content|safe }}</p><br>
         </div>

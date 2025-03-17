@@ -206,11 +206,11 @@ option {
         top: 7rem;
     }
     .select_value {
-        max-width:22%;
+        max-width:25%;
         font-size: 18px;
         border-radius: 8px;
         padding: 5px 6px;
-        right: 7.8rem;
+        right: 8rem;
         top: 7rem;
     }
     .text {

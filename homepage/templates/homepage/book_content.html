@@ -42,10 +42,20 @@
             <p id='content'>Περιεχόμενα</p>
             <p class="text1">{{ x.content|safe }}</p><br>
         </div>
-        
         <a href="{% url 'homepage:homepage' %}" class="button">Αρχική Σελίδα</a>
-        <a href="#" id="topLink" class="top-link">Κορυφή Σελίδας</a>
         <a href="#" id="backButton" class="button1">Πίσω</a>
+        <a href="#" id="topLink" class="top-link">Κορυφή Σελίδας</a>
+        <script>
+            document.addEventListener("scroll", function() {
+                let topLink = document.querySelector(".top-link");
+                if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+                    topLink.style.display = "block"; // Εμφανίζεται όταν ο χρήστης φτάσει κάτω
+                } else {
+                    topLink.style.display = "none"; // Κρύβεται αν ο χρήστης δεν είναι στο κάτω μέρος
+                }
+            });
+        </script>
+            
 
         <script>
             document.getElementById('topLink').addEventListener('click', function(event) {
@@ -62,6 +72,7 @@
                 localStorage.removeItem('topClicked');
             });
         </script>
+        
         
     {% endfor %} 
     

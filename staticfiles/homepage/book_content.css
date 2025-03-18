@@ -55,6 +55,7 @@ h1 {
 .text {
     margin-top: 10rem;
     margin-left: 5rem;
+    margin-bottom: 5rem;
 }
 
 #downbook {
@@ -113,14 +114,16 @@ option {
 
 .top-link {
     position: fixed;
-    bottom: 5rem;
-    right: 5rem;
+    bottom: 2rem; /* 5rem κενό από το κάτω μέρος της σελίδας */
+    right: 2rem;
     background-color: #007BFF;
     color: white;
     padding: 10px 15px;
     border-radius: 5px;
     text-decoration: none;
+    display: none; /* Κρύβεται αρχικά */
 }
+
 .top-link:hover {
     background-color: #0056b3;
 }
@@ -221,10 +224,9 @@ option {
     }
     .top-link {
         padding: 6px 12px;
-        font-size: 20px;
+        font-size: 18px;
         right: 2rem;
-        bottom: 5rem;
-        top: 10rem;
+        bottom: 2rem;
     }
     #content {
         font-size: 25px;

@@ -224,7 +224,7 @@ option {
         font-size: 20px;
         right: 2rem;
         bottom: 5rem;
-        margin-top: 30rem;
+        top: 30rem;
     }
     #content {
         font-size: 25px;

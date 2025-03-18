@@ -571,6 +571,13 @@ h2 {
         margin-left: 2rem;
         margin-top: 2rem;
     }
+    .dropdown_secondary {
+        font-size: 16px;
+        text-align: left;
+        margin: 5px;
+        padding: 0px;
+        max-width: 50%;
+    }
 
     .dropdn {
         position: relative;

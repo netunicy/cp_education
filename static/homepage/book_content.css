@@ -215,7 +215,8 @@ option {
     }
     .text {
         font-size: 20px;
-        margin-left: 5vw;
+        margin-left: 2rem;
+        margin-right: 2rem;
         margin-top: 35vh;
     }
     .top-link {

@@ -323,33 +323,32 @@ def lesson_details(request,ref_code_book):
                     now=timezone.now()
                     costumer=request.user.id
                     access = my_purchases.objects.filter(username_id=costumer,chapter=char)
-                    if access.exists():
+                    if request.user.is_superuser:
+                        template = loader.get_template('list_all_chapter.html')
+                        context = {
+                            'video': primary_chapter,
+                            'all': total,
+                            'data': checkout_data,
+                            'title':char,
+                            'check':1,
+                            }
+                        return HttpResponse(template.render(context, request))
+                    elif access.exists():
                         for i in access:  
                             if i.end_date >now and i.chapter==char:
                                 chapt_list=[]
                                 for i in sum1:
                                     chapt_list.append(i)
                                 total=len(set(chapt_list))
-                                if request.user.is_superuser:
-                                    template = loader.get_template('list_all_chapter.html')
-                                    context = {
-                                        'video': primary_chapter,
-                                        'all': total,
-                                        'data': checkout_data,
-                                        'title':char,
-                                        'check':1,
-                                        }
-                                    return HttpResponse(template.render(context, request))
-                                else:
-                                    template = loader.get_template('list_all_chapter.html')
-                                    context = {
-                                        'video': primary_chapter,
-                                        'all': total,
-                                        'data': checkout_data,
-                                        'title':char,
-                                        'check':1,
-                                        }
-                                    return HttpResponse(template.render(context, request))
+                                template = loader.get_template('list_all_chapter.html')
+                                context = {
+                                    'video': primary_chapter,
+                                    'all': total,
+                                    'data': checkout_data,
+                                    'title':char,
+                                    'check':1,
+                                    }
+                                return HttpResponse(template.render(context, request))
                             else:
                                 return HttpResponseRedirect(reverse('homepage:view_details'))
                     else:
@@ -360,33 +359,32 @@ def lesson_details(request,ref_code_book):
                     now=timezone.now()
                     costumer=request.user.id
                     access = my_purchases.objects.filter(username_id=costumer,chapter=char)
-                    if access.exists():
+                    if request.user.is_superuser:
+                        template = loader.get_template('list_all_chapter.html')
+                        context = {
+                            'video': sec_chapter,
+                            'all': total,
+                            'data': checkout_data,
+                            'title':char,
+                            'check':1,
+                            }
+                        return HttpResponse(template.render(context, request))
+                    elif access.exists():
                         for i in access:  
                             if i.end_date >now and i.chapter==char:
                                 chapt_list=[]
                                 for i in sum2:
                                     chapt_list.append(i)
                                 total=len(set(chapt_list))
-                                if request.user.is_superuser:
-                                    template = loader.get_template('list_all_chapter.html')
-                                    context = {
-                                        'video': sec_chapter,
-                                        'all': total,
-                                        'data': checkout_data,
-                                        'title':char,
-                                        'check':1,
-                                        }
-                                    return HttpResponse(template.render(context, request))
-                                else:
-                                    template = loader.get_template('list_all_chapter.html')
-                                    context = {
-                                        'video': sec_chapter,
-                                        'all': total,
-                                        'data': checkout_data,
-                                        'title':char,
-                                        'check':1,
-                                        }
-                                    return HttpResponse(template.render(context, request))
+                                template = loader.get_template('list_all_chapter.html')
+                                context = {
+                                    'video': sec_chapter,
+                                    'all': total,
+                                    'data': checkout_data,
+                                    'title':char,
+                                    'check':1,
+                                    }
+                                return HttpResponse(template.render(context, request))
                             else:
                                 return HttpResponseRedirect(reverse('lesson_details:view_details'))
                     else:
@@ -397,6 +395,16 @@ def lesson_details(request,ref_code_book):
                     now=timezone.now()
                     costumer=request.user.id
                     access = my_purchases.objects.filter(username_id=costumer,chapter=char)
+                    if request.user.is_superuser:
+                        template = loader.get_template('list_all_chapter.html')
+                        context = {
+                            'video': high_chapter,
+                            'all': total,
+                            'data': checkout_data,
+                            'title':char,
+                            'check':1,
+                            }
+                        return HttpResponse(template.render(context, request))
                     if access.exists():
                         for i in access:  
                             if i.end_date >now and i.chapter==char:
@@ -404,26 +412,15 @@ def lesson_details(request,ref_code_book):
                                 for i in sum3:
                                     chapt_list.append(i)
                                 total=len(set(chapt_list))
-                                if request.user.is_superuser:
-                                    template = loader.get_template('list_all_chapter.html')
-                                    context = {
-                                        'video': high_chapter,
-                                        'all': total,
-                                        'data': checkout_data,
-                                        'title':char,
-                                        'check':1,
-                                        }
-                                    return HttpResponse(template.render(context, request))
-                                else:
-                                    template = loader.get_template('list_all_chapter.html')
-                                    context = {
-                                        'video': high_chapter,
-                                        'all': total,
-                                        'data': checkout_data,
-                                        'title':char,
-                                        'check':1,
-                                        }
-                                    return HttpResponse(template.render(context, request))
+                                template = loader.get_template('list_all_chapter.html')
+                                context = {
+                                    'video': high_chapter,
+                                    'all': total,
+                                    'data': checkout_data,
+                                    'title':char,
+                                    'check':1,
+                                    }
+                                return HttpResponse(template.render(context, request))
                             else:
                                 return HttpResponseRedirect(reverse('lesson_details:view_details'))
                     else:

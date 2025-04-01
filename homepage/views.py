@@ -171,7 +171,7 @@ def lesson_details(request,ref_code_book):
                     }
                 return HttpResponse(template.render(context, request))
 
-            if my_data.filter(stage='primary',chapter_title=char).exists():
+            elif my_data.filter(stage='primary',chapter_title=char).exists():
                 request.session['char'] =char
                 request.session['ref_code_book']=ref_code_book
                 now=timezone.now()

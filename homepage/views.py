@@ -167,41 +167,40 @@ def lesson_details(request,ref_code_book):
                 now=timezone.now()
                 costumer=request.user.id
                 access = my_purchases.objects.filter(username_id=costumer)
-                if access.exists():
-                    if request.user.is_superuser:
-                        template = loader.get_template('list_all_chapter.html')
-                        context = {
-                            'video': my_data,
-                            'all': total,
-                            'data': checkout_data,
-                            'title':char,
-                            }
-                        return HttpResponse(template.render(context, request))
-                    else:
-                        for i in access:
-                            if i.end_date <now and i.chapter==char:
-                                return HttpResponseRedirect(reverse('homepage:view_details'))
-                            elif i.end_date>now and i.chapter==char:
-                                template = loader.get_template('list_all_chapter.html')
-                                context = {
-                                    'video': my_data,
-                                    'all': total,
-                                    'data': checkout_data,
-                                    'title':char,
-                                    }
-                                return HttpResponse(template.render(context, request))
-                    
-                            elif i.end_date>now and i.chapter=='Παρακολούθηση όλων των Κεφαλαίων':
-                                template = loader.get_template('list_all_chapter.html')
-                                context = {
-                                    'video': my_data,
-                                    'all': total,
-                                    'data': checkout_data,
-                                    'title':char,
-                                    }
-                                return HttpResponse(template.render(context, request))
-                            else:
-                                return HttpResponseRedirect(reverse('homepage:view_details'))
+                if request.user.is_superuser:
+                    template = loader.get_template('list_all_chapter.html')
+                    context = {
+                        'video': my_data,
+                        'all': total,
+                        'data': checkout_data,
+                        'title':char,
+                        }
+                    return HttpResponse(template.render(context, request))
+                elif access.exists():
+                    for i in access:
+                        if i.end_date <now and i.chapter==char:
+                            return HttpResponseRedirect(reverse('homepage:view_details'))
+                        elif i.end_date>now and i.chapter==char:
+                            template = loader.get_template('list_all_chapter.html')
+                            context = {
+                                'video': my_data,
+                                'all': total,
+                                'data': checkout_data,
+                                'title':char,
+                                }
+                            return HttpResponse(template.render(context, request))
+                
+                        elif i.end_date>now and i.chapter=='Παρακολούθηση όλων των Κεφαλαίων':
+                            template = loader.get_template('list_all_chapter.html')
+                            context = {
+                                'video': my_data,
+                                'all': total,
+                                'data': checkout_data,
+                                'title':char,
+                                }
+                            return HttpResponse(template.render(context, request))
+                        else:
+                            return HttpResponseRedirect(reverse('homepage:view_details'))
                             
                 else:
                     return HttpResponseRedirect(reverse('homepage:view_details'))
@@ -212,43 +211,42 @@ def lesson_details(request,ref_code_book):
                 now=timezone.now()
                 costumer=request.user.id
                 access = my_purchases.objects.filter(username_id=costumer)
+                if request.user.is_superuser:
+                    template = loader.get_template('list_all_chapter.html')
+                    context = {
+                        'video': my_data,
+                        'all': total,
+                        'data': checkout_data,
+                        'title':char,
+                        }
+                    return HttpResponse(template.render(context, request))
         
                 if access.exists():
-                    if request.user.is_superuser:
-                        template = loader.get_template('list_all_chapter.html')
-                        context = {
-                            'video': my_data,
-                            'all': total,
-                            'data': checkout_data,
-                            'title':char,
-                            }
-                        return HttpResponse(template.render(context, request))
-                    else:
-                        for i in access:
-                            if i.end_date <now and i.chapter==char:
-                                return HttpResponseRedirect(reverse('homepage:view_details'))
-                    
-                            elif i.end_date>now and i.chapter==char:
-                                template = loader.get_template('list_all_chapter.html')
-                                context = {
-                                    'video': my_data,
-                                    'all': total,
-                                    'data': checkout_data,
-                                    'title':char,
-                                    }
-                                return HttpResponse(template.render(context, request))
-                    
-                            elif i.end_date>now and i.chapter=='Παρακολούθηση όλων των Κεφαλαίων':
-                                template = loader.get_template('list_all_chapter.html')
-                                context = {
-                                    'video': my_data,
-                                    'all': total,
-                                    'data': checkout_data,
-                                    'title':char,
-                                    }
-                                return HttpResponse(template.render(context, request))
-                            else:
-                                return HttpResponseRedirect(reverse('homepage:view_details'))
+                    for i in access:
+                        if i.end_date <now and i.chapter==char:
+                            return HttpResponseRedirect(reverse('homepage:view_details'))
+                
+                        elif i.end_date>now and i.chapter==char:
+                            template = loader.get_template('list_all_chapter.html')
+                            context = {
+                                'video': my_data,
+                                'all': total,
+                                'data': checkout_data,
+                                'title':char,
+                                }
+                            return HttpResponse(template.render(context, request))
+                
+                        elif i.end_date>now and i.chapter=='Παρακολούθηση όλων των Κεφαλαίων':
+                            template = loader.get_template('list_all_chapter.html')
+                            context = {
+                                'video': my_data,
+                                'all': total,
+                                'data': checkout_data,
+                                'title':char,
+                                }
+                            return HttpResponse(template.render(context, request))
+                        else:
+                            return HttpResponseRedirect(reverse('homepage:view_details'))
                         
                 else:
                     return HttpResponseRedirect(reverse('homepage:view_details'))
@@ -259,7 +257,15 @@ def lesson_details(request,ref_code_book):
                 now=timezone.now()
                 costumer=request.user.id
                 access = my_purchases.objects.filter(username_id=costumer)
-        
+                if request.user.is_superuser:
+                    template = loader.get_template('list_all_chapter.html')
+                    context = {
+                        'video': my_data,
+                        'all': total,
+                        'data': checkout_data,
+                        'title':char,
+                        }
+                    return HttpResponse(template.render(context, request))
                 if access.exists():
                     if request.user.is_superuser:
                         template = loader.get_template('list_all_chapter.html')
@@ -312,7 +318,6 @@ def lesson_details(request,ref_code_book):
                 sum2=sec_all_chapter.values_list('chapter_title')
                 sum3=high_all_chapter.values_list('chapter_title')#total videos per chapter
                 total=0
-
                 if primary_all_chapter.exists():
                     primary_chapter = (primary_all_chapter.values('chapter_title', 'part_title', 'part_video').order_by('chapter_title', 'part_title', 'part_video').distinct('chapter_title'))
                     now=timezone.now()

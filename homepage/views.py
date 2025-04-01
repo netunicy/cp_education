@@ -324,6 +324,10 @@ def lesson_details(request,ref_code_book):
                     costumer=request.user.id
                     access = my_purchases.objects.filter(username_id=costumer,chapter=char)
                     if request.user.is_superuser:
+                        chapt_list=[]
+                        for i in sum1:
+                            chapt_list.append(i)
+                        total=len(set(chapt_list))
                         template = loader.get_template('list_all_chapter.html')
                         context = {
                             'video': primary_chapter,
@@ -360,6 +364,10 @@ def lesson_details(request,ref_code_book):
                     costumer=request.user.id
                     access = my_purchases.objects.filter(username_id=costumer,chapter=char)
                     if request.user.is_superuser:
+                        chapt_list=[]
+                        for i in sum2:
+                            chapt_list.append(i)
+                        total=len(set(chapt_list))
                         template = loader.get_template('list_all_chapter.html')
                         context = {
                             'video': sec_chapter,
@@ -396,6 +404,10 @@ def lesson_details(request,ref_code_book):
                     costumer=request.user.id
                     access = my_purchases.objects.filter(username_id=costumer,chapter=char)
                     if request.user.is_superuser:
+                        chapt_list=[]
+                        for i in sum3:
+                            chapt_list.append(i)
+                        total=len(set(chapt_list))
                         template = loader.get_template('list_all_chapter.html')
                         context = {
                             'video': high_chapter,

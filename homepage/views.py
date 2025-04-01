@@ -161,13 +161,22 @@ def lesson_details(request,ref_code_book):
             total=0
             for i in sum:
                 total=total+1
+            if request.user.is_superuser:
+                template = loader.get_template('list_all_chapter.html')
+                context = {
+                    'video': my_data,
+                    'all': total,
+                    'data': checkout_data,
+                    'title':char,
+                    }
+                return HttpResponse(template.render(context, request))
+
             if my_data.filter(stage='primary',chapter_title=char).exists():
                 request.session['char'] =char
                 request.session['ref_code_book']=ref_code_book
                 now=timezone.now()
                 costumer=request.user.id
                 access = my_purchases.objects.filter(username_id=costumer)
-        
                 if access.exists():
                     for i in access:
                         if i.end_date <now and i.chapter==char:

@@ -75,6 +75,7 @@ span {
 
 #li {
     color: black;
+    text-decoration: none;
 }
 
 .button {

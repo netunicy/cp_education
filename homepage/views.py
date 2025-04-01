@@ -293,6 +293,9 @@ def lesson_details(request,ref_code_book):
                 sum3=high_all_chapter.values_list('chapter_title')#total videos per chapter
                 total=0
                 if request.user.is_superuser:
+                    primary_chapter = (primary_all_chapter.values('chapter_title', 'part_title', 'part_video').order_by('chapter_title', 'part_title', 'part_video').distinct('chapter_title'))
+                    sec_chapter = (sec_all_chapter.values('chapter_title', 'part_title', 'part_video').order_by('chapter_title', 'part_title', 'part_video').distinct('chapter_title'))
+                    high_chapter = (sec_all_chapter.values('chapter_title', 'part_title', 'part_video').order_by('chapter_title', 'part_title', 'part_video').distinct('chapter_title'))
                     template = loader.get_template('list_all_chapter.html')
                     context = {
                         'video': primary_chapter,

@@ -99,7 +99,7 @@ h1 {
 span {
     color: blue;
     font-weight: bold;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 #timeWatched {
@@ -146,6 +146,7 @@ span {
 
 #li {
     color: black;
+    text-decoration: none;
 }
 
 #countdown {

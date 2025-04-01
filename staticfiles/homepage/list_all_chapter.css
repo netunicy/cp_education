@@ -37,7 +37,7 @@ h3 {
     margin-right: auto;
     margin-top: 5rem;
     margin-bottom: 3rem;
-    height: 450px;
+    height: auto;
     width: 300px;
 }
 
@@ -193,7 +193,7 @@ span {
         border-radius: 8px;
     }
     .image {
-        height: 300px;
+        height: auto;
         width: 200px;
         margin-top: 5rem;
         margin-bottom: 2rem;
@@ -259,7 +259,7 @@ span {
         border-radius: 8px;
     }
     .image {
-        height: 300px;
+        height: auto;
         width: 200px;
         margin-top: 3rem;
     }
@@ -314,7 +314,7 @@ span {
         border-radius: 8px;
     }
     .image {
-        height: 600px;
+        height: auto;
         width: 450px;
         margin-top: 7rem;
     }

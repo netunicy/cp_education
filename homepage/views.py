@@ -508,7 +508,7 @@ def view_details(request):
         return HttpResponse(template.render(context, request))
     
     elif char=='Παρακολούθηση όλων των Κεφαλαίων':
-        whatincludes=Videos.objects.filter(ref_code_video=ref_code_book).order_by('part_title')
+        whatincludes=Videos.objects.filter(ref_code_video=ref_code_book).order_by('id')
         primary_all_chapter=Videos.objects.filter(ref_code_video=ref_code_book,stage='primary')
         sec_all_chapter=Videos.objects.filter(ref_code_video=ref_code_book,stage='secondary')
         high_all_chapter=Videos.objects.filter(ref_code_video=ref_code_book,stage='high')

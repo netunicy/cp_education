@@ -211,9 +211,10 @@ span {
 
     #list {
         font-size: 16px; /* Smaller font size */
-        margin-left: auto;
+        margin-left: 1rem;
         margin-right: 2rem;
         margin-top: 2rem;
+        transform: translate(-15%);
     }
 
     .icon {

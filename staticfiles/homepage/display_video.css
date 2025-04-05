@@ -15,6 +15,7 @@ h1 {
     background-color: lightblue;
     padding-left: 25px;
     padding-right: 25px;
+    box-sizing: border-box;
 }
 
 .button {

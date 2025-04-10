@@ -162,7 +162,7 @@ def lesson_details(request,ref_code_book):
             return render(request,'error.html')
         else:
             checkout_data=Books_Images.objects.filter(ref_code_book=ref_code_book)#book-image
-            my_data=Videos.objects.filter(ref_code_video=ref_code_book,chapter_title=char).order_by('id')#videos
+            my_data=Videos.objects.filter(ref_code_video=ref_code_book,chapter_title=char).order_by('sorting_video')#videos
             sum=my_data.values_list('chapter_title')#total videos per chapter
             total=0
             for i in sum:
@@ -317,9 +317,9 @@ def lesson_details(request,ref_code_book):
                 char=='Παρακολούθηση όλων των Κεφαλαίων'
                 request.session["char"] = char
                 request.session["ref_code_book"] = ref_code_book
-                primary_all_chapter = Videos.objects.filter(ref_code_video=ref_code_book, stage='primary').order_by('sorting_video')
-                sec_all_chapter=Videos.objects.filter(ref_code_video=ref_code_book,stage='secondary').order_by('sorting_video')
-                high_all_chapter=Videos.objects.filter(ref_code_video=ref_code_book,stage='high').order_by('sorting_video')
+                primary_all_chapter = Videos.objects.filter(ref_code_video=ref_code_book, stage='primary').order_by('id')
+                sec_all_chapter=Videos.objects.filter(ref_code_video=ref_code_book,stage='secondary').order_by('id')
+                high_all_chapter=Videos.objects.filter(ref_code_video=ref_code_book,stage='high').order_by('id')
                 sum1=primary_all_chapter.values_list('chapter_title')
                 sum2=sec_all_chapter.values_list('chapter_title')
                 sum3=high_all_chapter.values_list('chapter_title')#total videos per chapter

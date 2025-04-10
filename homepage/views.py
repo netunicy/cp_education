@@ -32,6 +32,7 @@ from reportlab.lib.pagesizes import A4
 from reportlab.pdfgen import canvas
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfbase import pdfmetrics
+from django.db.models import Min
 pdfmetrics.registerFont(TTFont('DejaVuSans', 'fonts/DejaVuSans.ttf'))
 pdfmetrics.registerFont(TTFont('Verdana', 'fonts/verdana.ttf'))
 
@@ -86,8 +87,11 @@ def book_content(request,ref_code_book):
     book_title = mydata.values_list('book_title', flat=True).first()#
     request.session['book_title'] = book_title
 
-    list_capture1 = Videos.objects.filter(ref_code=myurl,ref_code_video=ref_code_book).order_by('id')#διαγράφω τα dublicates
-    list_capture= list_capture1.all().values_list('chapter_title', flat=True).distinct()
+    first_ids = Videos.objects.filter(ref_code=myurl,ref_code_video=ref_code_book).values('chapter_title').annotate(min_id=Min('id')).values_list('min_id', flat=True)
+    list_capture = Videos.objects.filter(
+        id__in=first_ids
+    ).order_by('id').values_list('chapter_title', flat=True)
+    
     template = loader.get_template('book_content.html')
     context = {
         'data': mydata,

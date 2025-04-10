@@ -32,7 +32,6 @@ from reportlab.lib.pagesizes import A4
 from reportlab.pdfgen import canvas
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfbase import pdfmetrics
-from django.db.models import Min
 pdfmetrics.registerFont(TTFont('DejaVuSans', 'fonts/DejaVuSans.ttf'))
 pdfmetrics.registerFont(TTFont('Verdana', 'fonts/verdana.ttf'))
 
@@ -86,12 +85,7 @@ def book_content(request,ref_code_book):
     mydata=Books_Images.objects.filter(ref_code=myurl,ref_code_book=ref_code_url).values()
     book_title = mydata.values_list('book_title', flat=True).first()#
     request.session['book_title'] = book_title
-
-    first_ids = Videos.objects.filter(ref_code=myurl,ref_code_video=ref_code_book).values('chapter_title').annotate(min_id=Min('id')).values_list('min_id', flat=True)
-    list_capture = Videos.objects.filter(
-        id__in=first_ids
-    ).order_by('id').values_list('chapter_title', flat=True)
-    
+    list_capture = Videos.objects.filter(ref_code=myurl,ref_code_video=ref_code_book).order_by('chapter_title').values_list('chapter_title', flat=True).distinct()#διαγράφω τα dublicates
     template = loader.get_template('book_content.html')
     context = {
         'data': mydata,
@@ -318,16 +312,6 @@ def lesson_details(request,ref_code_book):
                 request.session["char"] = char
                 request.session["ref_code_book"] = ref_code_book
                 primary_all_chapter = Videos.objects.filter(ref_code_video=ref_code_book, stage='primary').order_by('sorting_video')
-                
-                first_videos = primary_all_chapter.values('chapter_title').annotate(
-                    min_sorting=Min('sorting_video')
-                ).values_list('min_sorting', flat=True)
-
-                primary_chapter = Videos.objects.filter(
-                    sorting_video__in=first_videos,
-                    ref_code_video=ref_code_book,
-                    stage='primary'
-                ).order_by('sorting_video').values('chapter_title', 'part_title', 'part_video')
                 sec_all_chapter=Videos.objects.filter(ref_code_video=ref_code_book,stage='secondary').order_by('sorting_video')
                 high_all_chapter=Videos.objects.filter(ref_code_video=ref_code_book,stage='high').order_by('sorting_video')
                 sum1=primary_all_chapter.values_list('chapter_title')

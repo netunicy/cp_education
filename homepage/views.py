@@ -317,15 +317,25 @@ def lesson_details(request,ref_code_book):
                 char=='Παρακολούθηση όλων των Κεφαλαίων'
                 request.session["char"] = char
                 request.session["ref_code_book"] = ref_code_book
-                primary_all_chapter = Videos.objects.filter(ref_code_video=ref_code_book, stage='primary').order_by('id')
-                sec_all_chapter=Videos.objects.filter(ref_code_video=ref_code_book,stage='secondary').order_by('id')
-                high_all_chapter=Videos.objects.filter(ref_code_video=ref_code_book,stage='high').order_by('id')
+                primary_all_chapter = Videos.objects.filter(ref_code_video=ref_code_book, stage='primary').order_by('sorting_video')
+                
+                first_videos = primary_all_chapter.values('chapter_title').annotate(
+                    min_sorting=Min('sorting_video')
+                ).values_list('min_sorting', flat=True)
+
+                primary_chapter = Videos.objects.filter(
+                    sorting_video__in=first_videos,
+                    ref_code_video=ref_code_book,
+                    stage='primary'
+                ).order_by('sorting_video').values('chapter_title', 'part_title', 'part_video')
+                sec_all_chapter=Videos.objects.filter(ref_code_video=ref_code_book,stage='secondary').order_by('sorting_video')
+                high_all_chapter=Videos.objects.filter(ref_code_video=ref_code_book,stage='high').order_by('sorting_video')
                 sum1=primary_all_chapter.values_list('chapter_title')
                 sum2=sec_all_chapter.values_list('chapter_title')
                 sum3=high_all_chapter.values_list('chapter_title')#total videos per chapter
                 total=0
                 if primary_all_chapter.exists():
-                    primary_chapter = (primary_all_chapter.values('chapter_title', 'part_title', 'part_video','id').order_by('chapter_title', 'part_title', 'part_video','id').distinct('chapter_title'))
+                    primary_chapter = (primary_all_chapter.values('chapter_title', 'part_title', 'part_video').order_by('chapter_title', 'part_title', 'part_video').distinct('chapter_title'))
                     now=timezone.now()
                     costumer=request.user.id
                     access = my_purchases.objects.filter(username_id=costumer,chapter=char)

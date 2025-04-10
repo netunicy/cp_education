@@ -325,7 +325,7 @@ def lesson_details(request,ref_code_book):
                 sum3=high_all_chapter.values_list('chapter_title')#total videos per chapter
                 total=0
                 if primary_all_chapter.exists():
-                    primary_chapter = (primary_all_chapter.values('chapter_title', 'part_title', 'part_video').order_by('chapter_title', 'part_title', 'part_video').distinct('chapter_title'))
+                    primary_chapter = (primary_all_chapter.values('chapter_title', 'part_title', 'part_video','id').order_by('chapter_title', 'part_title', 'part_video','id').distinct('chapter_title'))
                     now=timezone.now()
                     costumer=request.user.id
                     access = my_purchases.objects.filter(username_id=costumer,chapter=char)

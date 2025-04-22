@@ -365,7 +365,7 @@ class Videos(models.Model):
     class Meta:
 
         verbose_name_plural = 'Videos'
-        ordering = ['stage','chapter_title', 'sorting_video']
+        ordering = ['stage', 'sorting_video']
     
     def __str__(self):
         return self.stage + self.level + '|'+str(self.topic) + '|' + str(self.book_type) + '|' + str(self.chapter_title)+ '|' + str(self.sorting_video) + '|' + str(self.created_date)

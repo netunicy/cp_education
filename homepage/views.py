@@ -85,12 +85,12 @@ def book_content(request,ref_code_book):
     mydata=Books_Images.objects.filter(ref_code=myurl,ref_code_book=ref_code_url).values()
     book_title = mydata.values_list('book_title', flat=True).first()#
     request.session['book_title'] = book_title
-    list_capture = Videos.objects.filter(ref_code=myurl,ref_code_video=ref_code_book).order_by('chapter_title','sorting_video').values_list('chapter_title','sorting_video').distinct()#διαγράφω τα dublicates
-    
+    list_capture = Videos.objects.filter(ref_code=myurl,ref_code_video=ref_code_book).order_by('chapter_title').values_list('chapter_title', flat=True).distinct()#διαγράφω τα dublicates
+    list_capture1=list_capture.values_list('chapter_title').order_by('sorting_video')
     template = loader.get_template('book_content.html')
     context = {
         'data': mydata,
-        'list': list_capture,
+        'list': list_capture1,
         }
     return HttpResponse (template.render(context, request))
  

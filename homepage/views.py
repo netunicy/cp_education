@@ -169,7 +169,7 @@ def lesson_details(request,ref_code_book):
                 now=timezone.now()
                 costumer=request.user.id
                 access = my_purchases.objects.filter(username_id=costumer)
-                if request.user.is_superuser:
+                if request.user.is_superuser or request.user.is_staff:
                     template = loader.get_template('list_all_chapter.html')
                     context = {
                         'video': my_data,
@@ -213,7 +213,7 @@ def lesson_details(request,ref_code_book):
                 now=timezone.now()
                 costumer=request.user.id
                 access = my_purchases.objects.filter(username_id=costumer)
-                if request.user.is_superuser:
+                if request.user.is_superuser or request.user.is_staff:
                     template = loader.get_template('list_all_chapter.html')
                     context = {
                         'video': my_data,
@@ -259,7 +259,7 @@ def lesson_details(request,ref_code_book):
                 now=timezone.now()
                 costumer=request.user.id
                 access = my_purchases.objects.filter(username_id=costumer)
-                if request.user.is_superuser:
+                if request.user.is_superuser or request.user.is_staff:
                     template = loader.get_template('list_all_chapter.html')
                     context = {
                         'video': my_data,
@@ -269,7 +269,7 @@ def lesson_details(request,ref_code_book):
                         }
                     return HttpResponse(template.render(context, request))
                 if access.exists():
-                    if request.user.is_superuser:
+                    if request.user.is_superuser or request.user.is_staff:
                         template = loader.get_template('list_all_chapter.html')
                         context = {
                             'video': my_data,
@@ -325,7 +325,7 @@ def lesson_details(request,ref_code_book):
                     now=timezone.now()
                     costumer=request.user.id
                     access = my_purchases.objects.filter(username_id=costumer,chapter=char)
-                    if request.user.is_superuser:
+                    if request.user.is_superuser or request.user.is_staff:
                         chapt_list=[]
                         for i in sum1:
                             chapt_list.append(i)
@@ -365,7 +365,7 @@ def lesson_details(request,ref_code_book):
                     now=timezone.now()
                     costumer=request.user.id
                     access = my_purchases.objects.filter(username_id=costumer,chapter=char)
-                    if request.user.is_superuser:
+                    if request.user.is_superuser or request.user.is_staff:
                         chapt_list=[]
                         for i in sum2:
                             chapt_list.append(i)
@@ -405,7 +405,7 @@ def lesson_details(request,ref_code_book):
                     now=timezone.now()
                     costumer=request.user.id
                     access = my_purchases.objects.filter(username_id=costumer,chapter=char)
-                    if request.user.is_superuser:
+                    if request.user.is_superuser or request.user.is_staff:
                         chapt_list=[]
                         for i in sum3:
                             chapt_list.append(i)

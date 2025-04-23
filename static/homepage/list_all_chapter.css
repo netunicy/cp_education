@@ -195,8 +195,8 @@ span {
     .image {
         height: auto;
         width: 200px;
-        margin-top: 5rem;
-        margin-bottom: 2rem;
+        margin-top: 10rem;
+        margin-bottom: 5rem;
     }
     .read-more-btn {
         font-size: 14px; /* Smaller font size */

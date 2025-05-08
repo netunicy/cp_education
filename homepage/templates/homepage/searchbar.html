@@ -41,7 +41,7 @@
                 {% for j in gen_info %}
                     <p id='p5'>{{j.book_title}}</p>
                     <img class="image" src="{{j.image}}" >
-                    <p><a id="p3" href="{% url 'accounts:login_user' %}"> {{x.part_title}}{{x.part_video}} </a></p>
+                    <p><a id="p3" href="{% url 'accounts:login_user' %}"> {{x.part_title''}}{{x.part_video}} </a></p>
                 {% endfor %}
                 <p></p>
                 <hr></hr>

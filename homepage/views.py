@@ -41,7 +41,7 @@ stripe.api_key = settings.STRIPE_SECRET_KEY
 def searchbar(request):
     if request.method == "POST":
         char = request.POST.get('search')
-        found = Videos.objects.filter(chapter_title__iregex=char)
+        found = Videos.objects.filter(Q(chapter_title__iregex=char) | Q(part_title__iregex=char))
         if char=="":
             template = loader.get_template('searchbar.html')
             context = {

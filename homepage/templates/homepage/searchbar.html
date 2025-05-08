@@ -22,7 +22,7 @@
                     {% for j in gen_info %}
                         <p id='p5'>{{j.book_title}}</p>
                         <img class="image" src="{{j.image}}" >
-                        <p><a id="p3" href="{% url 'homepage:lesson_details_searchbar' j.ref_code_book x.chapter_title %}"> {{x.chapter_title}} </a></p>
+                        <p><a id="p3" href="{% url 'homepage:lesson_details_searchbar' j.ref_code_book x.chapter_title %}"> {{x.part_title}}{{x.part_video}} </a></p>
                     {% endfor %}
                     <p></p>
                     <hr color='black'>

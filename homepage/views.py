@@ -863,6 +863,25 @@ def delete(request, id):
   userid=request.user.id
   add_basket.objects.filter(username_id=userid,id=id).delete()
   return HttpResponseRedirect(reverse('homepage:view_my_basket'))#παραμένει στην ίδια σελίδα 
+#def show_video(request,chapter_title,part_title,part_video):
+    #my_data = Videos.objects.filter(chapter_title=chapter_title,part_title=part_title,part_video=part_video).order_by('sorting_video')
+    #all_part_video=Videos.objects.filter(chapter_title=chapter_title).order_by('sorting_video')
+    #for i in my_data:
+       # y=i.views
+        #i.views=y+1
+       # i.save()
+    #for i in my_data:
+        #onedrive_link = str(i.video)
+    #response = urllib.request.urlopen(onedrive_link)
+    #video_content = response.read()
+    #encoded_video_data = base64.b64encode(video_content).decode('utf-8')
+    #data_url = f'data:video/mp4;base64,{encoded_video_data}'
+    #context = {
+        #'data': my_data,
+        #'data_url':data_url,
+        #'all_part_video':all_part_video,
+        #}
+    #return render(request, 'display_video.html', context)
 
 @login_required
 def show_video(request,chapter_title,part_title,part_video):

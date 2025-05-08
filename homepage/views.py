@@ -880,6 +880,7 @@ def show_video(request,chapter_title,part_title,part_video):
 
         optimized_url, _ = cloudinary_url(
             public_id,
+            sign_url=True,
             resource_type="video",
             transformation=[
                 {"quality": "auto", "fetch_format": "mp4"}

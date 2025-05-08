@@ -126,11 +126,12 @@ li a:hover {
 .icon {
     left: 630px;
     position: absolute;
+    padding: 10px;
 }
 
 .div1 {
     width: 650px;
-    height: 40px;
+    height: 50px;
     border: 1px solid rgb(141, 141, 142);
     display: flex;
     justify-content: left;
@@ -168,7 +169,6 @@ p {
 }
 .wh_incl {
     margin-left: 10px;
-    padding: 5px;
 }
 .top-link {
     position: fixed;

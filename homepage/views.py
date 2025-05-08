@@ -32,6 +32,8 @@ from reportlab.lib.pagesizes import A4
 from reportlab.pdfgen import canvas
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfbase import pdfmetrics
+from cloudinary.utils import cloudinary_url
+
 pdfmetrics.registerFont(TTFont('DejaVuSans', 'fonts/DejaVuSans.ttf'))
 pdfmetrics.registerFont(TTFont('Verdana', 'fonts/verdana.ttf'))
 
@@ -871,8 +873,19 @@ def show_video(request,chapter_title,part_title,part_video):
         i.views=y+1
         i.save()
     for i in my_data:
-        onedrive_link = str(i.video)
-    response = urllib.request.urlopen(onedrive_link)
+        full_url = str(i.video)  # π.χ. full Cloudinary URL
+        # Αφαίρεση domain και παραμέτρων
+        path = full_url.split('/upload/')[1]
+        public_id = os.path.splitext(path)[0]  # αφαιρεί το .mp4
+
+        optimized_url, _ = cloudinary_url(
+            public_id,
+            resource_type="video",
+            transformation=[
+                {"quality": "auto", "fetch_format": "mp4"}
+            ]
+        )
+    response = urllib.request.urlopen(optimized_url)
     video_content = response.read()
     encoded_video_data = base64.b64encode(video_content).decode('utf-8')
     data_url = f'data:video/mp4;base64,{encoded_video_data}'

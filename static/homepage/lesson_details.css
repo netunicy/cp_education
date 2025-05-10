@@ -17,7 +17,7 @@ h1 {
     border-radius: 4px;
     left: 2rem;
     top: 2rem;
-    height: 200px;
+    height: auto;
     width: 150px;
     margin-bottom:2rem;
 }
@@ -169,6 +169,7 @@ p {
 }
 .wh_incl {
     margin-left: 10px;
+    margin-right: 5rem;
 }
 .top-link {
     position: fixed;

@@ -244,7 +244,7 @@ p {
         padding: 5px 6px;
         font-size: 18px;
         left:12rem;
-        top: 44.8rem;
+        top: 41.3rem;
     }
     .info {
         font-size: 20px;
@@ -268,7 +268,7 @@ p {
         font-size: 20px;
     }
     .image {
-        height: 200px;
+        height: auto;
         width: 130px;
         margin-bottom: 3rem;
     }
@@ -314,7 +314,7 @@ p {
         position: relative;
         font-size: 15px;
         width:auto;
-        height: 5vh;
+        height: auto;
         margin-right: auto;
         left: 0vw;
     }
@@ -407,19 +407,18 @@ p {
 
     #wh_incl {
         font-size: 18px;
-        margin-right: 20px;
-        margin-left: 5px;
-        
+        margin-right: 3rem;
+        margin-left: 1rem;
     }
 
     .icon {
-        left: 93%;
+        left: 90%;
         margin-top: 0px;
     }
     
     .div1 {
         width: auto;
-        height: 50px;
+        height: auto;
         margin-right: 2vw;
     }
     .button {

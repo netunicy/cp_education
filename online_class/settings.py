@@ -149,7 +149,6 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 SESSION_COOKIE_AGE = 1800  # 30 minutes (in seconds)
 SESSION_SAVE_EVERY_REQUEST = True  # Refresh session expiration on every request
 
-
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'live.smtp.mailtrap.io'
 EMAIL_PORT = 587

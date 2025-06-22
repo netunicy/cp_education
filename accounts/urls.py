@@ -13,4 +13,5 @@ urlpatterns = [
          auth_views.PasswordResetView.as_view(template_name="password_reset.html"), 
          name='reset_password'),
     path('change_username/',views.change_username, name='change_username'),
+    path('api/login/', views.login_view, name='login'),
 ]

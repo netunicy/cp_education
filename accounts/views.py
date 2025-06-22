@@ -8,11 +8,12 @@ from django.contrib import messages
 from django.views.decorators.csrf import csrf_exempt, csrf_protect,requires_csrf_token
 import mailtrap as mt
 from django.contrib.auth import authenticate, login
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.template import loader
 from django.urls import reverse
 from .models import UserActivation,accept_t_c
 from homepage.models import Mylogo
+from rest_framework.decorators import api_view
 
 
 def logout_view(request):
@@ -50,7 +51,18 @@ def login_user(request,*args, **kwargs):
         context = {'logo': logo,
         }
         return render(request,'login.html',context)
+    
+@api_view(['POST'])
+def login_view(request):
+    username = request.data.get('username')
+    password = request.data.get('password')
 
+    user = authenticate(request, username=username, password=password)
+    if user is not None:
+        return JsonResponse({'message': 'Login successful!'})
+    else:
+        return JsonResponse({'error': 'Invalid credentials'}, status=400)
+    
 @requires_csrf_token
 @csrf_protect
 def user_register(request,):

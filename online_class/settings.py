@@ -188,8 +188,8 @@ django_heroku.settings(locals())
 import cloudinary
 
 cloudinary.config( 
-  cloud_name = 'hotitu8ux', 
-  api_key = '986256953617355', 
-  api_secret = '4cdDMawuJbDkkEtwAEdleSseyNI' 
+  cloud_name = '', 
+  api_key = '', 
+  api_secret = '' 
 )
 

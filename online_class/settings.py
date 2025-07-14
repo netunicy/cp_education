@@ -12,7 +12,7 @@ DEBUG = False
 
 #with open(os.path.join(BASE_DIR,'secret_key.txt')) as f:
     #SECRET_KEY = f.read().strip()
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', '2a92df29dgdfhkghjl92lfg44sd4g1gds2f422d8g474d2fghdf26ga6faer4rsttyj')
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', '')
     
 ALLOWED_HOSTS = ['127.0.0.1:8000','localhost','www.cpnetuni.com','cpnetuni.com', 'dimpan-bb7f5a0620d7.herokuapp.com']
 
@@ -76,9 +76,9 @@ WSGI_APPLICATION = 'online_class.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd48bt70segul3c',
-        'USER': 'u7cutb55nc591d',
-        'PASSWORD': 'p518aecec04b3dcb9b6e5a784bc8b86ed31eed876839204490c0ec6ed18a977e9',
+        'NAME': '',
+        'USER': '',
+        'PASSWORD': '',
         'HOST': 'ec2-54-205-238-146.compute-1.amazonaws.com',
         'PORT': '5432',
         'OPTIONS': {
@@ -150,13 +150,13 @@ SESSION_COOKIE_AGE = 1800  # 30 minutes (in seconds)
 SESSION_SAVE_EVERY_REQUEST = True  # Refresh session expiration on every request
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'live.smtp.mailtrap.io'
+EMAIL_HOST = ''
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_HOST_USER = 'api'
-EMAIL_HOST_PASSWORD = '388ed30f960c9bd511b4cbd740d05b7d'
-DEFAULT_FROM_EMAIL = 'no-reply@cpnetuni.com'
+EMAIL_HOST_PASSWORD = ''
+DEFAULT_FROM_EMAIL = ''
 
 TINYMCE_DEFAULT_CONFIG = {
     "height": 600,
@@ -178,8 +178,8 @@ TINYMCE_DEFAULT_CONFIG = {
     "contextmenu": "link image table",  # Εμφανίζει επιλογές όταν κάνεις δεξί κλικ
 }
 
-STRIPE_PUBLISHABLE_KEY = 'pk_live_51MlR2oGb8TMtV2YPsGpBrHOCyNWf3r68pRlib5nFxfbT4su4D0Q7csnmv8woLyDDLRpfqLwypmlNtr3EpREdLOEw00WJRRP8ZG'
-STRIPE_SECRET_KEY = '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'
+STRIPE_PUBLISHABLE_KEY = ''
+STRIPE_SECRET_KEY = ''
 stripe.api_key = STRIPE_SECRET_KEY
 
 django_heroku.settings(locals())
